@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <generator uri="https://blog.rust-lang.org/inside-rust/" version="0.1.0">Inside Rust Blog</generator>
+    <link href="https://blog.rust-lang.org/inside-rust/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="https://blog.rust-lang.org/inside-rust/" rel="alternate" type="text/html" />
+    <id>https://blog.rust-lang.org/inside-rust/</id>
+    <title>Inside Rust Blog</title>
+    <subtitle>Want to follow along with Rust development? Curious how you might get involved? Take a look!</subtitle>
+    <author>
+        <name>Maintained by the Rust Teams.</name>
+        <uri>https://github.com/rust-lang/blog.rust-lang.org/</uri>
+    </author>
+    <updated>2020-03-26T20:50:02Z</updated>
+
+    
+    <entry>
+        <title>rustc-dev-guide Overview</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/26/rustc-dev-guide-overview.html" type="text/html" title="rustc-dev-guide Overview" />
+        <published>2020-03-26T00:00:00Z</published>
+        <updated>2020-03-26T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/26/rustc-dev-guide-overview.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/26/rustc-dev-guide-overview.html">&lt;p&gt;The &lt;code&gt;rustc&lt;/code&gt; compiler includes over 380,000 lines of source across more than 40 crates&lt;sup&gt;1&lt;/sup&gt; to support the lexing through binary linking stages of the Rust compile process. It is daunting for newcomers, and we recognize that a high-level survey of the pipeline is warranted.&lt;/p&gt;
+&lt;p&gt;In our &lt;a href=&quot;https://blog.rust-lang.org/inside-rust/2019/12/20/wg-learning-update.html&quot;&gt;December update&lt;/a&gt;, we announced plans for the publication of the &amp;quot;rustc-dev-guide Overview&amp;quot;. Our goal is to describe the integrated components of the compiler in a high-level document for users and potential developers. The Overview will be published at the beginning of the &lt;a href=&quot;https://rustc-dev-guide.rust-lang.org/&quot;&gt;rustc-dev-guide&lt;/a&gt; to orient readers to the more detailed documentation of the compiler in subsequent chapters.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#rustc-overview-structure&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;rustc-overview-structure&quot;&gt;&lt;/a&gt;Rustc Overview Structure&lt;/h2&gt;
+&lt;p&gt;We will break the compiler down to address two questions at a high-level:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;What does the compiler do to your source code?&lt;/li&gt;
+&lt;li&gt;How does the compiler do it?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As we address these general areas, we will provide a synopsis that briefly covers frequent community questions like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are the conflicting goals of the compiler, and how are issues like compiler speed, compiler memory usage, program speed, program size, and compiler stability/correctness balanced?&lt;/li&gt;
+&lt;li&gt;What are the stages of the compile process, and how do they fit together?&lt;/li&gt;
+&lt;li&gt;What are the intermediate representations of my source code?&lt;/li&gt;
+&lt;li&gt;What happens to generics during the compile process?&lt;/li&gt;
+&lt;li&gt;What kind of optimizations are performed during the compile process?&lt;/li&gt;
+&lt;li&gt;How does incremental compilation work?&lt;/li&gt;
+&lt;li&gt;Does &lt;code&gt;rustc&lt;/code&gt; have support for parallel compilation?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#get-involved&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;get-involved&quot;&gt;&lt;/a&gt;Get Involved!&lt;/h2&gt;
+&lt;p&gt;Work is in progress on the Overview, and we need your help. A working draft of the document is available in &lt;a href=&quot;https://github.com/rust-lang/rustc-dev-guide/pull/633&quot;&gt;this pull request&lt;/a&gt; on the &lt;code&gt;rustc-dev-guide&lt;/code&gt; GitHub repository.&lt;/p&gt;
+&lt;p&gt;If there is an area of &lt;code&gt;rustc&lt;/code&gt; that you would like to understand better and it is appropriate for an overview document, please open an issue on our &lt;a href=&quot;https://github.com/rust-lang/rustc-dev-guide/issues&quot;&gt;issue tracker&lt;/a&gt; to let us know.&lt;/p&gt;
+&lt;p&gt;And if you know the compiler and want to pitch in on the rustc-dev-guide Overview, open a pull request with your revisions. We welcome your contributions and look forward to your participation!&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#interested-in-learning-working-group)?&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;interested-in-learning-working-group)?&quot;&gt;&lt;/a&gt;Interested in Learning (Working Group)?&lt;/h2&gt;
+&lt;p&gt;Are you interested in learning more about the &lt;code&gt;rustc&lt;/code&gt; compiler and teaching others? Drop by our &lt;a href=&quot;https://rust-lang.zulipchat.com/#narrow/stream/196385-t-compiler.2Fwg-learning&quot;&gt;Zulip stream&lt;/a&gt; and say hello!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt; These numbers account for lines in Rust files across all dependencies necessary to build &lt;code&gt;rustc&lt;/code&gt;. Thanks to @LeSeulArtichaut for these calculations! See &lt;a href=&quot;https://rust-lang.zulipchat.com/#narrow/stream/196385-t-compiler.2Fwg-learning/topic/The.20Rustc.20Overview.3A.20blog.20post/near/189441101&quot;&gt;the notes on Zulip&lt;/a&gt; for additional details.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Chris Simpkins</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Resolving Rust's forward progress guarantees</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/19/terminating-rust.html" type="text/html" title="Resolving Rust's forward progress guarantees" />
+        <published>2020-03-19T00:00:00Z</published>
+        <updated>2020-03-19T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/19/terminating-rust.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/19/terminating-rust.html">&lt;p&gt;There has been a longstanding miscompilation in Rust: programs that do not make
+&lt;a href=&quot;https://en.cppreference.com/w/cpp/language/memory_model#Forward_progress&quot;&gt;forward progress&lt;/a&gt;. Note that the previous link is to the C++ definition; Rust
+is not C++, but currently LLVM optimizes all LLVM IR with the assumption that a
+lack of forward progress is undefined behavior.&lt;/p&gt;
+&lt;p&gt;Note also that Rust does not define a lack of forward progress as &lt;a href=&quot;https://rust-lang.github.io/unsafe-code-guidelines/glossary.html#undefined-behavior&quot;&gt;undefined
+behavior&lt;/a&gt;, while C++ does. It is particularly common to encounter the
+miscompilation &amp;quot;intentionally&amp;quot; when writing panic handlers and other such code
+with a body of &lt;code&gt;loop {}&lt;/code&gt;. Some users also report that they've unintentionally
+hit this bug in recursive code which accidentally lacks a base case.&lt;/p&gt;
+&lt;p&gt;Somewhat recently, LLVM added an intrinsic which tells the optimizer that
+forward progress has been made. On nightly Rust, you can enable this with
+&lt;code&gt;-Zinsert-sideeffect&lt;/code&gt;, which will use some heuristics to insert it where it's
+possibly needed (currently, massively overshooting the minimal set).&lt;/p&gt;
+&lt;p&gt;However, recent attempts to enable this intrinsic by default hit a snag: it's
+very expensive on compile times to do so (&lt;a href=&quot;https://perf.rust-lang.org/compare.html?start=66b0c97070f422cb82baaaafc79ee94cab4396c5&amp;end=548b5e75afd6bad696920dfdb69c9812ce0488f1&quot;&gt;3-30% regressions&lt;/a&gt;). There is some runtime effect as well; check builds (which do not
+generate LLVM IR or run LLVM passes) regressed by up to 3-7%.&lt;/p&gt;
+&lt;p&gt;The current implementation in rustc emits calls to the side effect intrinsic
+very aggressively; certainly in way more cases than is strictly necessary.
+However, there's not really any good ideas on how to improve the analysis rustc
+does without missing edge cases: we'd have to be &amp;quot;as good&amp;quot; as LLVM to emit only
+when necessary.&lt;/p&gt;
+&lt;p&gt;Upstream, in LLVM, discussion has been ongoing for some time around whether, and
+how to, adjust LLVM's model to permit frontends for languages like Rust to
+opt-out of the forward progress guarantees. It seems unlikely that a solution
+will materialize in upstream LLVM that allows us to opt-out in the short term.&lt;/p&gt;
+&lt;p&gt;However, having said that, side effect itself is likely improvable to at least
+avoid the excessive consecutive calls, as demonstrated by this &lt;a href=&quot;https://gist.github.com/nikic/7e521def71d106c345a255e464b18d3f&quot;&gt;IR&lt;/a&gt;
+that occurs after LLVM optimizations. It seems plausible that those
+improvements may also reduce the compile time hit that we see when enabling
+side effect on the rustc side. Having said that, how simple these improvements
+are is unclear.&lt;/p&gt;
+&lt;p&gt;We would love to hear feedback and suggestions on how to resolve this problem!
+Please leave feedback on &lt;a href=&quot;https://internals.rust-lang.org/t/resolving-rusts-forward-progress-guarantees/12003&quot;&gt;this internals
+thread&lt;/a&gt;.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Mark Rousskov</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>All Hands Retrospective</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/18/all-hands-retrospective.html" type="text/html" title="All Hands Retrospective" />
+        <published>2020-03-18T00:00:00Z</published>
+        <updated>2020-03-18T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/18/all-hands-retrospective.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/18/all-hands-retrospective.html">&lt;p&gt;If you're not already aware, the Rust All Hands event, originally scheduled for
+March 16th–20th in Thessaloníki, Greece was cancelled in January. The All Hands'
+is one of our members' favourite events of the year and we were quite
+disappointed that we weren't able to pull off the event this year. In the
+interest of being transparent, as well as documenting for future events, we
+have written a retrospective about what happened, what we learned, and the
+future of the All Hands.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#timeline&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;timeline&quot;&gt;&lt;/a&gt;Timeline&lt;/h2&gt;
+&lt;h3&gt;&lt;a href=&quot;#context&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;context&quot;&gt;&lt;/a&gt;Context&lt;/h3&gt;
+&lt;p&gt;Both previous All Hands took place in Mozilla's Berlin office. Mozilla
+traditionally sponsored the event, providing the venue and catering, and also
+paying for the flights and accommodation of volunteers who didn't have a
+company or other person to pay for them. It was a good way to bring the entire
+community together for a week of planning, discussions, and camaraderie.&lt;/p&gt;
+&lt;p&gt;Still, after the last All Hands, it was clear that we couldn't do a third one
+in Mozilla's Berlin office. The Rust org was simply growing too big. The
+Berlin office didn't really have the space to accommodate us.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#finding-a-space&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;finding-a-space&quot;&gt;&lt;/a&gt;Finding a space.&lt;/h3&gt;
+&lt;p&gt;As a group, our first step was to see if we could find other companies to
+sponsor a space. We followed a number of leads but ultimately never found
+anyone that had a space to offer at a suitable time. We started looking
+at other options, like private hacker spaces and universities. The University
+of Macedonia in Thessaloniki, Greece made us a quite attractive offer, and
+they had the right time available, so we decided to go for that.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#budgeting-and-sponsorships&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;budgeting-and-sponsorships&quot;&gt;&lt;/a&gt;Budgeting and sponsorships.&lt;/h3&gt;
+&lt;p&gt;We in the All Hands group did our best to create a budget. Unfortunately we
+did not have access to any expense reports from the previous years. We had a
+survey we could use to estimate the number of attendees and a rough idea where
+they were coming from. We knew the costs of the venue. We added fudge factors.
+We thought we'd done a good job, though it would turn out that we were quite
+off in our calculations.&lt;/p&gt;
+&lt;p&gt;However even based on our estimated budget, it was clear that Mozilla was not
+going to be able to cover the costs alone. This seemed like a good opportunity
+to try and build relationships with some of the companies that have started to
+use Rust by approaching them for sponsorships. We weren't sure, though, how
+many sponsorships we'd be able to get, and so we hit upon the idea of using
+paid tickets.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#tickets&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;tickets&quot;&gt;&lt;/a&gt;Tickets&lt;/h3&gt;
+&lt;p&gt;The idea was that people could purchase a ticket to the event, which would
+help to cover the costs, but that it was also okay to have a &lt;em&gt;&amp;quot;gratis&amp;quot;&lt;/em&gt;
+ticket. Tickets have the advantage of being relatively easy for people to
+submit in their expense report if they are travelling with a company. We also
+found a number of companies who might be interested in a more
+traditional sponsorship.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#finding-a-bank-account&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;finding-a-bank-account&quot;&gt;&lt;/a&gt;Finding a bank account.&lt;/h3&gt;
+&lt;p&gt;Still, we had another problem. The Rust organisation does not have a bank
+account we could use to collect and distribute money, and we didn't have an
+obvious entity to sign legal agreements.&lt;/p&gt;
+&lt;p&gt;At this point, we spoke to a company that might serve as a bank account. We
+had a quick call and went over a plan that seemed promising. Mozilla would
+contract with them for their services managing and organising the event, and
+this would serve as Mozilla's sponsorship. The other sponsorships and proceeds
+from ticket sales would collect in their bank account and we would
+manage distributions.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#pulling-the-trigger&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;pulling-the-trigger&quot;&gt;&lt;/a&gt;Pulling the trigger.&lt;/h3&gt;
+&lt;p&gt;At that point, we sent mail encouraging people to book tickets, and we also
+started following up more with sponsors. Our expectation was that we would
+soon have a bank account for collecting funds, and we started collecting
+information to repay people who had booked travel.&lt;/p&gt;
+&lt;p&gt;In retrospect, it's clear that this was premature. It seemed like all the
+pieces were in place, and we knew that if people didn't start booking tickets,
+they never would. But the pieces were not in place, not actually, and we clearly
+should have taken this moment ask whether we were really going to be able to
+pull this off.&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;#realising-it-wont-work.&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;realising-it-wont-work.&quot;&gt;&lt;/a&gt;Realising it won't work.&lt;/h3&gt;
+&lt;p&gt;This all started to unravel about a month before the event. In short, we
+encountered some logistical hurdles around finalising the business and legal
+aspects within the organisation's constraints that also prompted us to review
+the finances in more detail. This revealed that our estimates were off. Thus,
+we were faced with a tough decision:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If we continue with the event, there was the chance that the logistics would
+just fail to come together. That would leave attendees in Greece, out of
+pocket, and without an All Hands to attend.&lt;/li&gt;
+&lt;li&gt;Further, we might not be able to raise enough money to be able to pay for
+the entirety of people's travel and lodging as we had promised. This would be
+unfortunate, though perhaps something people could live with.&lt;/li&gt;
+&lt;li&gt;On the other hand, if we cancel, we have to deal with the fact that people
+had already started booking travel, and not everyone would be able to get a
+refund from their airline/hotel, and accept that there might not be an
+All Hands this year.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After much analysis and discussion with the Rust core team, we ultimately
+opted for the painful but ultimately safer route: cancelling the event. The
+cost to cover cancelling in January was relatively low, and even if it did
+come together we were worried about the high stress of pulling it off burning
+people out of the project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Addendum&lt;/strong&gt; Since we cancelled the All Hands, outbreak of the &lt;a href=&quot;https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic&quot;&gt;COVID-19&lt;/a&gt; in
+Europe in the recent weeks, would have caused the event to be cancelled
+regardless. In a weird twist of fate, we were fortunate to cancel when we did.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#lessons-learned&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;lessons-learned&quot;&gt;&lt;/a&gt;Lessons Learned&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Bound uncertainty and total cost.&lt;/strong&gt; — Promising to cover all travel with
+no kind of upper limit was unwise. It had worked in the past, perhaps, but the
+event was growing, and that was partly luck. Organising an event is very complex
+and there are a lot of unknowns, and it was clear for some of them we didn't have
+the time or resources to resolve them adequately.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Location, location, location&lt;/strong&gt; — It was hard to find a good location. While
+Thessaloníki was cheap and great in some ways, we encountered some logistical
+hiccups that made it less than ideal. For example; we found that the cost of a
+lot of the flights for our international members were quite high compared to
+other European cities.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Know your audience&lt;/strong&gt; — Some companies weren't interested in sponsoring
+because the event wasn't sufficiently high profile, or because the &amp;quot;ROI&amp;quot;
+(&amp;quot;Return On Investment&amp;quot;) didn't quite fit into the budgets and categories it
+would have to come from. We also had some uncertainty about how much
+&amp;quot;participation&amp;quot; to offer in exchange for sponsorship, since we didn't want to
+give the impression that anyone could just &amp;quot;buy their way&amp;quot; into the All Hands —
+at the same time, there is clear value to the Rust organisation in having
+sponsors participate.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#the-future&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;the-future&quot;&gt;&lt;/a&gt;The Future&lt;/h2&gt;
+&lt;p&gt;Right now, we're currently organising with Mozilla reimbursing anyone who had
+purchased non-refundable ticket. We're also going to take the time to step back
+and re-evaluate what kind of event is possible, and what kind of event our
+members want to attend.&lt;/p&gt;
+&lt;p&gt;If you're a member of the Rust programming language organisation, you should
+have received an email containing a link to a survey asking you about what
+kind of All Hands you'd enjoy, and what you would want to attend. Once people
+have had enough time to respond, we'll publish the results on the
+&amp;quot;Inside Rust&amp;quot; blog.&lt;/p&gt;
+&lt;p&gt;If you didn't receive an email and you believe you should have, or you have
+anything you'd like to mention in private to organisers. Please email us
+at &lt;a href=&quot;mailto:rust-all-hands@rust-lang.org&quot;&gt;rust-all-hands@rust-lang.org&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It's very unfortunate that we weren't able to have the All Hands like we
+planned. We know that it's a lot of our members favourite Rust event, and we
+would like to thank everyone for reaching out and being so understanding.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Erin Power</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Governance Working Group Update: Meeting 12 March 2020</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/17/governance-wg.html" type="text/html" title="Governance Working Group Update: Meeting 12 March 2020" />
+        <published>2020-03-17T00:00:00Z</published>
+        <updated>2020-03-17T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/17/governance-wg.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/17/governance-wg.html">&lt;p&gt;Hello everyone!&lt;/p&gt;
+&lt;p&gt;We held another meeting of the Rust Governance Working Group on Zulip on 12 March.&lt;/p&gt;
+&lt;p&gt;The agenda included&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Follow up on &lt;a href=&quot;https://github.com/rust-lang/rfcs/pull/2856&quot;&gt;the Project Group RFC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Follow up on moving repositories (community, devtools, and nursery) into the &lt;a href=&quot;https://github.com/rust-lang/&quot;&gt;Rust-Lang GitHub Org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pre-RFC process&lt;/li&gt;
+&lt;li&gt;How to manage RFC discussion&lt;/li&gt;
+&lt;li&gt;Plan Agenda for Next time&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can find the &lt;a href=&quot;https://github.com/rust-lang/wg-governance/blob/master/minutes/2020.03.12.md&quot;&gt;detailed minutes&lt;/a&gt; on the &lt;a href=&quot;https://github.com/rust-lang/wg-governance&quot;&gt;wg-governance&lt;/a&gt; repository, but here is a quick summary:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Follow up on the &lt;a href=&quot;https://github.com/rust-lang/rfcs/pull/2856&quot;&gt;Project Group RFC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Follow up on moving repos from community, devtools, and nursery into the &lt;a href=&quot;https://github.com/rust-lang&quot;&gt;Rust-Lang GitHub Org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pre-RFC process&lt;/li&gt;
+&lt;li&gt;Managing RFC discussions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#next-meeting&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;next-meeting&quot;&gt;&lt;/a&gt;Next meeting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Our next meeting will be 26 March 2020 via &lt;a href=&quot;https://rust-lang.zulipchat.com/#narrow/stream/223182-wg-governance&quot;&gt;Zulip&lt;/a&gt; 18-19 CET / 1pm-2pm EST / 10-11am PST.&lt;/li&gt;
+&lt;li&gt;In 2020 the agenda is always at https://hackmd.io/ATj1rZJaRimaIfIWfAOYfQ&lt;/li&gt;
+&lt;li&gt;Current plan is:
+&lt;ol&gt;
+&lt;li&gt;Domain Working Group changes&lt;/li&gt;
+&lt;li&gt;Pre-RFC RFC (if ready)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+
+        <author>
+            <name>Nell Shamrell-Harrington</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Upcoming compiler-team design meetings</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/13/upcoming-compiler-team-design-meetings.html" type="text/html" title="Upcoming compiler-team design meetings" />
+        <published>2020-03-13T00:00:00Z</published>
+        <updated>2020-03-13T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/13/upcoming-compiler-team-design-meetings.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/13/upcoming-compiler-team-design-meetings.html">&lt;p&gt;In our &lt;a href=&quot;https://zulip-archive.rust-lang.org/131828tcompiler/40166planningmeeting20200313.html&quot;&gt;planning meeting today&lt;/a&gt;, the &lt;a href=&quot;https://www.rust-lang.org/governance/teams/compiler&quot;&gt;compiler team&lt;/a&gt; has scheduled our
+next batch of upcoming design meetings. You can find the exact times
+on the compiler team's &lt;a href=&quot;https://rust-lang.github.io/compiler-team/#meeting-calendar&quot;&gt;meeting calendar&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On April 3rd (&lt;a href=&quot;https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NGxqdmpndjI3N3FsZTM0bnRyNDU2NHNoYjMgNnU1cnJ0Y2U2bHJ0djA3cGZpM2RhbWdqdXNAZw&amp;tmsrc=6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com&quot;&gt;calendar event&lt;/a&gt;), we will discuss
+&lt;a href=&quot;https://github.com/rust-lang/compiler-team/issues/257&quot;&gt;rust-lang/compiler-team#257&lt;/a&gt;, which is a proposal to move the
+&amp;quot;in-progress&amp;quot; rustc cranelift backend in tree.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a href=&quot;#did-you-know&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;did-you-know&quot;&gt;&lt;/a&gt;Did you know?&lt;/h3&gt;
+&lt;p&gt;Most weeks, the compiler team has some sort of design meeting. These
+meetings take place on Zulip and are open to all. Every 4 weeks, we do
+a planning meeting to pick the next few meetings from the list of open
+proposals. You can find &lt;a href=&quot;https://rust-lang.github.io/compiler-team/about/steering-meeting/&quot;&gt;more details about how the compiler-team
+steering meeting process here&lt;/a&gt;.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Niko Matsakis</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>This Week in Rust is looking for a new maintainer.</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/13/twir-new-lead.html" type="text/html" title="This Week in Rust is looking for a new maintainer." />
+        <published>2020-03-13T00:00:00Z</published>
+        <updated>2020-03-13T00:00:01Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/13/twir-new-lead.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/13/twir-new-lead.html">&lt;p&gt;Vikrant Chaudhary (&lt;a href=&quot;https://github.com/nasa42&quot;&gt;@nasa42&lt;/a&gt;) is retiring from &lt;a href=&quot;https://this-week-in-rust.org&quot;&gt;This Week in Rust&lt;/a&gt;. He joined This Week in Rust in June 2015 with issue 84 and has been part of Rust Community team since February 2018. We'd like to thank Vikrant for his stewardship of TWiR these past five years, and making TWiR one of the community's favourite newsletters. We wish him all the best in his future projects.&lt;/p&gt;
+&lt;p&gt;TWiR is now looking for a new lead maintainer. To help smooth the transition, Vikrant will be writing TWiR for 4 more weeks while we onboard a new maintainer. If you're interested please, express your interest on our &lt;a href=&quot;https://github.com/emberian/this-week-in-rust/issues/1167&quot;&gt;GitHub Issue&lt;/a&gt;.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Erin Power</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>The rustc-guide is now rustc-dev-guide</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/13/rename-rustc-guide.html" type="text/html" title="The rustc-guide is now rustc-dev-guide" />
+        <published>2020-03-13T00:00:00Z</published>
+        <updated>2020-03-13T00:00:02Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/13/rename-rustc-guide.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/13/rename-rustc-guide.html">&lt;p&gt;You may or may not be aware of two similarly named resources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://doc.rust-lang.org/rustc/index.html&quot;&gt;The rustc book&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://rustc-dev-guide.rust-lang.org/&quot;&gt;The rustc-guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What's the difference? The &amp;quot;rustc book&amp;quot; is intended as a guide for &lt;em&gt;users&lt;/em&gt; of the
+compiler. The &amp;quot;rustc-guide&amp;quot; is intended as a guide for &lt;em&gt;developers&lt;/em&gt; of the
+compiler. However, the names have always been confusingly similar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For that reason, we have decided to rename the &lt;code&gt;rustc-guide&lt;/code&gt; to
+&lt;code&gt;rustc-dev-guide&lt;/code&gt;. You can now find it at &lt;a href=&quot;https://rustc-dev-guide.rust-lang.org/&quot;&gt;https://rustc-dev-guide.rust-lang.org/&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We have put significant work into finding and updating links around the
+&lt;code&gt;rust-lang/*&lt;/code&gt; repos. We have also put up a website in place of the former
+&lt;code&gt;rustc-guide&lt;/code&gt; website that redirects to the new one.&lt;/p&gt;
+&lt;p&gt;To update your git clone of the (former) &lt;code&gt;rustc-guide&lt;/code&gt; repo, you can do the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git remote set-url origin https://github.com/rust-lang/rustc-dev-guide.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will change where git thinks the &lt;code&gt;origin&lt;/code&gt; remote repo is to
+&lt;code&gt;rust-lang/rustc-dev-guide&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can find more information in &lt;a href=&quot;https://github.com/rust-lang/rustc-dev-guide/issues/602&quot;&gt;this issue&lt;/a&gt;. If you have any questions or
+concerns, please feel free to contact us either by opening an &lt;a href=&quot;https://github.com/rust-lang/rustc-dev-guide&quot;&gt;issue on the
+rustc-dev-guide repo&lt;/a&gt; or on our &lt;a href=&quot;https://rust-lang.zulipchat.com/#narrow/stream/196385-t-compiler.2Fwg-learning&quot;&gt;zulip channel&lt;/a&gt;.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>mark-i-m</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>March Lang Team Design Meetings</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/11/lang-team-design-meetings.html" type="text/html" title="March Lang Team Design Meetings" />
+        <published>2020-03-11T00:00:00Z</published>
+        <updated>2020-03-11T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/11/lang-team-design-meetings.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/11/lang-team-design-meetings.html">&lt;p&gt;We've scheduled our &lt;strong&gt;language team design meetings&lt;/strong&gt; for March. We have plans for two meetings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;March 16th -- we will summarize discussions from &lt;a href=&quot;https://github.com/rust-lang/project-ffi-unwind&quot;&gt;the ffi-unwind project group&lt;/a&gt; about whether we should permit foreign exceptions to propagate across the &amp;quot;C&amp;quot; ABI boundary, or establish a separate ABI (e.g., &amp;quot;C unwind&amp;quot;) for such cases.&lt;/li&gt;
+&lt;li&gt;March 23rd -- we will talk with James Munns about Sealed Rust (see the blog posts &lt;a href=&quot;https://ferrous-systems.com/blog/sealed-rust-the-pitch/&quot;&gt;The Pitch&lt;/a&gt; and &lt;a href=&quot;https://ferrous-systems.com/blog/sealed-rust-the-plan/&quot;&gt;The Plan&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href=&quot;#about-the-language-team-design-meetings&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;about-the-language-team-design-meetings&quot;&gt;&lt;/a&gt;About the language team design meetings&lt;/h2&gt;
+&lt;p&gt;The idea of the design meeting is that it's a time for us to have
+in-depth discussions on some particular topic. This might be a burning
+problem that we've discovered, an update on some existing design work,
+or a forward looking proposal.&lt;/p&gt;
+&lt;p&gt;The meetings are open for anyone to listen in and attend. They are
+typically also recorded and posted online, along with minutes, after
+the fact. They generally take place on Mondays at &amp;quot;noon Boston time&amp;quot;
+-- but for the precise scheduling you should check the &lt;a href=&quot;https://github.com/rust-lang/lang-team/#meeting-calendar&quot;&gt;lang team
+calendar&lt;/a&gt;. Scheduled meetings are subject to change and
+cancelation. In that case, the calendar events will be updated.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Niko Matsakis</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Recent and future pattern matching improvements</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/03/04/recent-future-pattern-matching-improvements.html" type="text/html" title="Recent and future pattern matching improvements" />
+        <published>2020-03-04T00:00:00Z</published>
+        <updated>2020-03-04T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/03/04/recent-future-pattern-matching-improvements.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/03/04/recent-future-pattern-matching-improvements.html">&lt;p&gt;Much of writing software revolves around checking if some data has some shape (&amp;quot;pattern&amp;quot;), extracting information from it, and then reacting if there was a match. To facilitate this, many modern languages, Rust included, support what is known as &amp;quot;pattern matching&amp;quot;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you are new to Rust or want to refresh your knowledge, you may first want to read chapters &lt;a href=&quot;https://doc.rust-lang.org/book/ch06-00-enums.html&quot;&gt;6, Enums and Pattern Matching&lt;/a&gt; and &lt;a href=&quot;https://doc.rust-lang.org/book/ch18-00-patterns.html&quot;&gt;18, Patterns and Matching&lt;/a&gt; in the book, or read more about &lt;a href=&quot;https://doc.rust-lang.org/reference/expressions/match-expr.html&quot;&gt;&lt;code&gt;match&lt;/code&gt; expressions&lt;/a&gt; and &lt;a href=&quot;https://doc.rust-lang.org/reference/patterns.html&quot;&gt;patterns&lt;/a&gt; in the reference.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pattern matching in Rust works by checking if a &lt;a href=&quot;https://doc.rust-lang.org/reference/expressions.html#place-expressions-and-value-expressions&quot;&gt;&lt;em&gt;place&lt;/em&gt;&lt;/a&gt; in memory (the &amp;quot;data&amp;quot;) matches a certain &lt;em&gt;pattern&lt;/em&gt;. In this post, we will look at some recent improvements to patterns soon available in stable Rust as well as some more already available in nightly.&lt;/p&gt;
+&lt;p&gt;If you are familiar with the nightly features discussed and would like to help out with the efforts to drive them to stable, jump ahead to &lt;a href=&quot;#how-can-i-help?&quot;&gt;*How can I help?&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#subslice-patterns-[head,-tail-@-..]&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;subslice-patterns-[head,-tail-@-..]&quot;&gt;&lt;/a&gt;Subslice patterns, &lt;code&gt;[head, tail @ ..]&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Lists are one of the most basic and common data structures found in software. In Rust, lists are usually a contiguous sequence of elements in memory, or a &lt;em&gt;slice&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Since slices are so commonplace, it is important that working with them is easy. To that end, we stabilized &lt;a href=&quot;https://blog.rust-lang.org/2018/05/10/Rust-1.26.html#basic-slice-patterns&quot;&gt;&lt;em&gt;fixed-length slice patterns&lt;/em&gt; in Rust 1.26.0&lt;/a&gt;. So now it is possible to e.g., write &lt;code&gt;let [a, b, c] = my_array;&lt;/code&gt; to destructure an array of 3 elements. Oftentimes, however, we're working with a slice of unknown length, so given only fixed-length slice patterns, we have to provide a fallback &lt;code&gt;match&lt;/code&gt; arm with e.g. &lt;code&gt;_&lt;/code&gt; as the pattern.&lt;/p&gt;
+&lt;p&gt;In Rust 1.42.0, &lt;a href=&quot;https://github.com/rust-lang/rust/pull/67712&quot;&gt;we are stabilizing &lt;em&gt;subslice patterns&lt;/em&gt;&lt;/a&gt;. To introduce a subslice pattern, we use &lt;code&gt;..&lt;/code&gt; which denotes a variable-length gap, matching as many elements as possible not matched by the patterns before and after the &lt;code&gt;..&lt;/code&gt;. For example, in a parser, we would like to error when a list of attributes, &lt;code&gt;attrs&lt;/code&gt;, is not followed by an item, &lt;a href=&quot;https://doc.rust-lang.org/nightly/nightly-rustc/rustc_parse/parser/struct.Parser.html#method.recover_attrs_no_item&quot;&gt;so we write&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;/// Recover if we parsed attributes and expected an item but there was none.
+fn recover_attrs_no_item(&amp;amp;mut self, attrs: &amp;amp;[Attribute]) -&amp;gt; PResult&amp;lt;'a, ()&amp;gt; {
+    let (start, end) = match attrs {
+        [] =&amp;gt; return Ok(()),
+        [x0] =&amp;gt; (x0, x0),
+        [x0, .., xn] =&amp;gt; (x0, xn),
+    };
+    let msg = if end.is_doc_comment() {
+        &amp;quot;expected item after doc comment&amp;quot;
+    } else {
+        &amp;quot;expected item after attributes&amp;quot;
+    };
+    let mut err = self.struct_span_err(end.span, msg);
+    if end.is_doc_comment() {
+        err.span_label(end.span, &amp;quot;this doc comment doesn't document anything&amp;quot;);
+    }
+    if let [.., penultimate, _] = attrs {
+        err.span_label(start.span.to(penultimate.span), &amp;quot;other attributes here&amp;quot;);
+    }
+    Err(err)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here we have two subslice patterns, the first one being &lt;code&gt;[x0, .., xn]&lt;/code&gt;. In this case, the pattern binds &lt;code&gt;x0&lt;/code&gt;, the first element, and &lt;code&gt;xn&lt;/code&gt;, the last element, and ignores everything in the middle, matching a slice with at least two elements in total. Meanwhile, &lt;code&gt;[]&lt;/code&gt; and &lt;code&gt;[x0]&lt;/code&gt; match cases with fewer than two elements, so the compiler knows that we have covered all possibilities. In the latter case, we extract the &lt;code&gt;penultimate&lt;/code&gt; element of the slice, which, as the name suggests, also requires that the slice has at least two elements.&lt;/p&gt;
+&lt;p&gt;We can also bind a subslice to a variable. For example, suppose we want to disallow &lt;code&gt;...&lt;/code&gt; in all but the last parameter of a function. If so, we can write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;match &amp;amp;*fn_decl.inputs {
+    ... // other arms
+    [ps @ .., _] =&amp;gt; {
+        for Param { ty, span, .. } in ps {
+            if let TyKind::CVarArgs = ty.kind {
+                self.err_handler().span_err(
+                    *span,
+                    &amp;quot;`...` must be the last argument of a C-variadic function&amp;quot;,
+                );
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, &lt;code&gt;ps @ ..&lt;/code&gt; will bind the initial elements of the slice to &lt;code&gt;ps&lt;/code&gt; and ignore the last element.&lt;/p&gt;
+&lt;p&gt;After more than 7 years of baking in nightly, with many twists and turns, subslice patterns will finally be stable. To get here, we've had to redesign the feature, plug soundness holes in the borrow checker, and substantially refactor the exhaustiveness checker. For more on how we got here, &lt;a href=&quot;https://github.com/rust-lang/rust/pull/67712&quot;&gt;read the stabilization report&lt;/a&gt;, &lt;a href=&quot;https://thomashartmann.dev/blog/feature(slice_patterns)/&quot;&gt;Thomas Hartmann's blog post&lt;/a&gt;, and stay tuned for the 1.42.0 release announcement  on the 12th of March.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#nested-or-patterns&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;nested-or-patterns&quot;&gt;&lt;/a&gt;Nested OR-patterns&lt;/h2&gt;
+&lt;p&gt;When pattern matching on an &lt;code&gt;enum&lt;/code&gt;, the logic for some of the variants may be exactly the same. To avoid repeating ourselves, the &lt;code&gt;|&lt;/code&gt; separator in &lt;code&gt;match&lt;/code&gt;, &lt;code&gt;if let&lt;/code&gt;, or &lt;code&gt;while let&lt;/code&gt; expressions can be used to say that the branch should be taken if any of the &lt;code&gt;|&lt;/code&gt;-separated patterns match. For example, we may write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// Any local node that may call something in its body block should be explored.
+fn should_explore(tcx: TyCtxt&amp;lt;'_&amp;gt;, hir_id: hir::HirId) -&amp;gt; bool {
+    match tcx.hir().find(hir_id) {
+        Some(Node::Item(..))
+        | Some(Node::ImplItem(..))
+        | Some(Node::ForeignItem(..))
+        | Some(Node::TraitItem(..))
+        | Some(Node::Variant(..))
+        | Some(Node::AnonConst(..))
+        | Some(Node::Pat(..)) =&amp;gt; true,
+        _ =&amp;gt; false,
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is serviceable, but &lt;code&gt;Some(_)&lt;/code&gt; is still repeated several times. With &lt;a href=&quot;https://github.com/rust-lang/rust/issues/54883&quot;&gt;&lt;code&gt;#![feature(or_patterns)]&lt;/code&gt;&lt;/a&gt;, which recently became usable on nightly, this repetition can be avoided:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// Any local node that may call something in its body block should be explored.
+fn should_explore(tcx: TyCtxt&amp;lt;'_&amp;gt;, hir_id: hir::HirId) -&amp;gt; bool {
+    match tcx.hir().find(hir_id) {
+        Some(
+            Node::Item(..)
+            | Node::ImplItem(..)
+            | Node::ForeignItem(..)
+            | Node::TraitItem(..)
+            | Node::Variant(..)
+            | Node::AnonConst(..)
+            | Node::Pat(..),
+        ) =&amp;gt; true,
+        _ =&amp;gt; false,
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Previously, when using &lt;code&gt;|&lt;/code&gt; in a &lt;code&gt;match&lt;/code&gt; expression, the &lt;code&gt;|&lt;/code&gt; syntax was part of &lt;code&gt;match&lt;/code&gt; itself. With &lt;code&gt;or_patterns&lt;/code&gt;, this is now part of patterns themselves, so you can nest OR-patterns arbitrarily, and use them in &lt;code&gt;let&lt;/code&gt; statements too:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;let Ok(x) | Err(x) = foo();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;An OR-pattern covers the &lt;em&gt;union&lt;/em&gt; of all the &lt;code&gt;|&lt;/code&gt;-ed (&amp;quot;or-ed&amp;quot;) patterns. To ensure that whatever alternative matched, all bindings are consistent and initialized, each or-ed pattern must include the exact same set of bindings, with the same types, and the same binding modes.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#bindings-after-&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;bindings-after-&quot;&gt;&lt;/a&gt;Bindings after &lt;code&gt;@&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;When matching on a certain substructure, you sometimes want to hold on to the whole. For example, given &lt;code&gt;Some(Expr { .. })&lt;/code&gt;, you would like to bind the outer &lt;code&gt;Some(_)&lt;/code&gt; layer. In Rust, this can be done using e.g., &lt;code&gt;expr @ Some(Expr { .. })&lt;/code&gt;, which binds the matched place to &lt;code&gt;expr&lt;/code&gt; while also ensuring that it matches &lt;code&gt;Some(Expr { .. })&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Suppose also that &lt;code&gt;Expr&lt;/code&gt; has a field &lt;code&gt;span&lt;/code&gt; that you would also use. In ancient times, that is before Rust 1.0, this was possible, but today, it results in an error:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;error[E0303]: pattern bindings are not allowed after an `@`
+ --&amp;gt; src/lib.rs:L:C
+  |
+L |         bar @ Some(Expr { span }) =&amp;gt; {}
+  |                           ^^^^ not allowed after `@`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This was turned into an error in &lt;a href=&quot;https://github.com/rust-lang/rust/pull/16053&quot;&gt;#16053&lt;/a&gt;, mainly due to the difficulties of encoding borrow checking rules in a sound way in the old AST based borrow checker.&lt;/p&gt;
+&lt;p&gt;Since then, we have &lt;a href=&quot;https://github.com/rust-lang/rust/pull/64790&quot;&gt;removed the old borrow checker&lt;/a&gt; in favor of one based on &lt;a href=&quot;https://rustc-dev-guide.rust-lang.org/mir/index.html&quot;&gt;MIR&lt;/a&gt;, which is a simpler, and more appropriate data structure for borrow checking. Specifically, in the case of a statement like &lt;code&gt;let ref x @ ref y = a;&lt;/code&gt;, we would get roughly the same MIR as if we had used &lt;code&gt;let x = &amp;amp;a; let y = &amp;amp;a;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So now that having bindings to the right of &lt;code&gt;@&lt;/code&gt; is handled uniformly and correctly by the borrow checker (e.g., the compiler won't allow &lt;code&gt;ref x @ ref mut y&lt;/code&gt;), we have decided to allow them under &lt;a href=&quot;https://github.com/rust-lang/rust/issues/65490&quot;&gt;&lt;code&gt;#![feature(bindings_after_at)]&lt;/code&gt;&lt;/a&gt;, now available on nightly. With the feature gate enabled, you may for example write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;#![feature(bindings_after_at)]
+
+fn main() {
+    if let x @ Some(y) = Some(0) {
+        dbg!(x, y);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Our hope is that with providing this feature, we remove one surprising corner of the language.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;#combining-by-move-and-by-ref-bindings&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;combining-by-move-and-by-ref-bindings&quot;&gt;&lt;/a&gt;Combining by-move and by-&lt;code&gt;ref&lt;/code&gt; bindings&lt;/h2&gt;
+&lt;p&gt;For similar reasons as noted in the case of bindings after &lt;code&gt;@&lt;/code&gt;, Rust does not currently allow you to combine normal by-move bindings with those that are by-&lt;code&gt;ref&lt;/code&gt;. For example, should you write...:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
+    let tup = (&amp;quot;foo&amp;quot;.to_string(), 0);
+    let (x, ref y) = tup;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;... you would get an error:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;error[E0009]: cannot bind by-move and by-ref in the same pattern
+ --&amp;gt; src/main.rs:3:10
+  |
+3 |     let (x, ref y) = tup;
+  |          ^  ----- by-ref pattern here
+  |          |
+  |          by-move pattern here
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At the same time, however, the compiler is perfectly happy to allow...:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
+    let tup = (&amp;quot;foo&amp;quot;.to_string(), 0);
+    let x = tup.0;
+    let ref y = tup.1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;... even though there is no semantic difference between these programs.&lt;/p&gt;
+&lt;p&gt;Now that we have moved to the new borrow checker, as outlined in the previous section, we have relaxed this restriction on nightly as well, so under &lt;a href=&quot;https://github.com/rust-lang/rust/issues/68354&quot;&gt;&lt;code&gt;#![feature(move_ref_pattern)]&lt;/code&gt;&lt;/a&gt;, you may write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;#![feature(move_ref_pattern)]
+
+fn main() {
+    let tup = (&amp;quot;foo&amp;quot;.to_string(), 0);
+    let (x, ref y) = tup;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;&lt;a href=&quot;#how-can-i-help&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot; id=&quot;how-can-i-help&quot;&gt;&lt;/a&gt;How can I help?&lt;/h2&gt;
+&lt;p&gt;To recap, we have three unstable features, all improving pattern matching in different ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/rust-lang/rust/issues/54883&quot;&gt;&lt;code&gt;#![feature(or_patterns)]&lt;/code&gt;&lt;/a&gt;, which allows you to arbitrarily nest or-patterns e.g. &lt;code&gt;Some(Foo | Bar)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/rust-lang/rust/issues/65490&quot;&gt;&lt;code&gt;#![feature(bindings_after_at)]&lt;/code&gt;&lt;/a&gt;, which allows e.g., &lt;code&gt;ref x @ Some(ref y)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/rust-lang/rust/issues/68354&quot;&gt;&lt;code&gt;#![feature(move_ref_pattern)]&lt;/code&gt;&lt;/a&gt;, which allows e.g., &lt;code&gt;(x, ref y)&lt;/code&gt; where &lt;code&gt;x&lt;/code&gt; is by-move and &lt;code&gt;y&lt;/code&gt; is by-reference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To help us transition these features over to stable Rust, we need your help to ensure that they meet the expected quality standards. To help out, consider:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using the features in your code where applicable, if a nightly compiler is something you are OK with, and reporting any bugs, problems, deficiencies in diagnostics, etc. as issues.&lt;/li&gt;
+&lt;li&gt;Looking through the reported issues under the feature gate labels (e.g., &lt;a href=&quot;https://github.com/rust-lang/rust/labels/F-or_patterns&quot;&gt;&lt;code&gt;F-or_patterns&lt;/code&gt;&lt;/a&gt;) and seeing if you can help out with any of them.
+&lt;ul&gt;
+&lt;li&gt;In particular, if you can help out with writing tests, that is appreciated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thanks for reading, and happy pattern matching!&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Mazdak &quot;Centril&quot; Farrokhzad</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Pietro Albini has joined the core team</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2020/02/27/pietro-joins-core-team.html" type="text/html" title="Pietro Albini has joined the core team" />
+        <published>2020-02-27T00:00:00Z</published>
+        <updated>2020-02-27T00:00:00Z</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2020/02/27/pietro-joins-core-team.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2020/02/27/pietro-joins-core-team.html">&lt;p&gt;We are very happy to announce that &lt;a href=&quot;https://github.com/pietroalbini&quot;&gt;Pietro Albini&lt;/a&gt; has joined the core team. Pietro joined us back on December 24th 2019 (a Christmas present for the core team!), but we have been a bit late in announcing it (sorry Pietro!).&lt;/p&gt;
+&lt;p&gt;Pietro co-leads the infrastructure and docs.rs teams, and is a member of the crates.io and release teams, and the security response working group. He has been instrumental in setting up and maintaining the various services and technology which keeps the Rust project moving quickly and smoothly.&lt;/p&gt;
+&lt;p&gt;Pietro will continue to focus on infrastructure issues, starting with setting up a team to coordinate Rust's web presence - the website, crates.io, docs.rs, etc.&lt;/p&gt;
+&lt;p&gt;Aidan will co-lead the infrastructure team and gradually hand over full leadership to Pietro.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Nick Cameron</name>
+        </author>
+    </entry>
+    
+</feed>
