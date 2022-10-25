@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>Announcing Rust 1.41.0</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Jan. 30, 2020 &middot; The Rust Release Team
@@ -91,7 +81,7 @@ efficient software.</p>
 <p>If you don't have it already, you can <a href="https://www.rust-lang.org/install.html">get <code>rustup</code></a> from the
 appropriate page on our website, and check out the <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1410-2020-01-30">detailed release notes for
 1.41.0</a> on GitHub.</p>
-<h2><a href="#whats-in-1.41.0-stable" aria-hidden="true" class="anchor" id="whats-in-1.41.0-stable"></a>What's in 1.41.0 stable</h2>
+<h2><a href="#whats-in-1410-stable" aria-hidden="true" class="anchor" id="whats-in-1410-stable"></a>What's in 1.41.0 stable</h2>
 <p>The highlights of Rust 1.41.0 include relaxed restrictions for trait
 implementations, improvements to <code>cargo install</code>, a more <code>git</code>-friendly
 <code>Cargo.lock</code>, and new FFI-related guarantees for <code>Box&lt;T&gt;</code>. See the <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1410-2020-01-30">detailed
@@ -142,7 +132,7 @@ branches.</p>
 those conflicts. This new format will be used for all new lockfiles, while
 existing lockfiles will still rely on the previous format. You can learn about
 the choices leading to the new format <a href="https://github.com/rust-lang/cargo/pull/7070">in the PR adding it</a>.</p>
-<h3><a href="#more-guarantees-when-using-boxt>-in-ffi" aria-hidden="true" class="anchor" id="more-guarantees-when-using-boxt>-in-ffi"></a>More guarantees when using <code>Box&lt;T&gt;</code> in FFI</h3>
+<h3><a href="#more-guarantees-when-using-boxt-in-ffi" aria-hidden="true" class="anchor" id="more-guarantees-when-using-boxt-in-ffi"></a>More guarantees when using <code>Box&lt;T&gt;</code> in FFI</h3>
 <p>Starting with Rust 1.41.0, we have declared that a <code>Box&lt;T&gt;</code>, where <code>T: Sized</code>
 is now ABI compatible with the C language's pointer (<code>T*</code>) types. So if you
 have an <code>extern &quot;C&quot;</code> Rust function, called from C, your Rust function can now
@@ -216,7 +206,7 @@ Rust 1.42.0, these targets will be demoted to the lowest support tier.</p>
 <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1410-2020-01-30">Rust</a>, <a href="https://github.com/rust-lang/cargo/blob/master/CHANGELOG.md#cargo-141-2020-01-30">Cargo</a>, and <a href="https://github.com/rust-lang/rust-clippy/blob/master/CHANGELOG.md#rust-141">Clippy</a>. We also
 have started landing MIR optimizations, which should improve compile time: you
 can learn more about them in the <a href="https://blog.rust-lang.org/inside-rust/2019/12/02/const-prop-on-by-default.html">&quot;Inside Rust&quot; blog post</a>.</p>
-<h2><a href="#contributors-to-141.0" aria-hidden="true" class="anchor" id="contributors-to-141.0"></a>Contributors to 1.41.0</h2>
+<h2><a href="#contributors-to-1410" aria-hidden="true" class="anchor" id="contributors-to-1410"></a>Contributors to 1.41.0</h2>
 <p>Many people came together to create Rust 1.41.0. We couldn't have done it
 without all of you. <a href="https://thanks.rust-lang.org/rust/1.41.0/">Thanks!</a></p>
 
@@ -247,10 +237,17 @@ without all of you. <a href="https://thanks.rust-lang.org/rust/1.41.0/">Thanks!<
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

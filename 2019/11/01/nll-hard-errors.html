@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>Completing the transition to the new borrow checker</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Nov. 1, 2019 &middot; Niko Matsakis
@@ -104,7 +94,7 @@ implementation <em>also</em> fixed a lot of bugs. In other words, the new
 borrow checker did not just accept more programs -- <strong>it also rejected
 some programs that were only accepted in the first place due to memory
 unsafety bugs in the old borrow checker!</strong></p>
-<h3><a href="#until-recently-those-fixed-bugs-produced-warnings,-not-errors" aria-hidden="true" class="anchor" id="until-recently-those-fixed-bugs-produced-warnings,-not-errors"></a>Until recently, those fixed bugs produced warnings, not errors</h3>
+<h3><a href="#until-recently-those-fixed-bugs-produced-warnings-not-errors" aria-hidden="true" class="anchor" id="until-recently-those-fixed-bugs-produced-warnings-not-errors"></a>Until recently, those fixed bugs produced warnings, not errors</h3>
 <p>Obviously, we don't want to accept programs that could undermine
 Rust's safety guarantees. At the same time, as part of our commitment
 to stability, we try to avoid making sudden bug fixes that will affect
@@ -121,7 +111,7 @@ directly: instead, we ran the old checker in order to see if the crate
 <em>used</em> to compile before. If so, we reported the errors as Future
 Compatibility Warnings, since we were changing something that used to
 compile into errors.</p>
-<h3><a href="#all-good-things-must-come-to-an-end-and-bad-ones,-too" aria-hidden="true" class="anchor" id="all-good-things-must-come-to-an-end-and-bad-ones,-too"></a>All good things must come to an end; and bad ones, too</h3>
+<h3><a href="#all-good-things-must-come-to-an-end-and-bad-ones-too" aria-hidden="true" class="anchor" id="all-good-things-must-come-to-an-end-and-bad-ones-too"></a>All good things must come to an end; and bad ones, too</h3>
 <p>Over time we have been slowly transitioning those future compatibility
 warnings into errors, a bit at a time. About two months ago, we
 decided that the time had come to finish the job. So, over the course
@@ -184,10 +174,17 @@ goes into great detail.</p>
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

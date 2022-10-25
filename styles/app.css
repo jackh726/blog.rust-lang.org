@@ -34,6 +34,23 @@ body {
   body > #main-content {
     flex: 1; }
 
+blockquote {
+  font-style: italic;
+  position: relative;
+  background-color: #f7f9f9;
+  border-left: 8px solid #c3cdd2;
+  border-radius: 5px;
+  margin: 0;
+  margin-bottom: 2rem;
+  padding: 2rem; }
+  blockquote:before {
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em; }
+  blockquote p:last-of-type {
+    margin-bottom: 0; }
+
 code {
   overflow: auto; }
 
@@ -219,9 +236,15 @@ header h1 {
   letter-spacing: 1px; }
 
 .highlight {
-  height: 30px;
+  height: 12px;
   position: relative;
-  top: -30px;
+  top: 0;
   left: -10px;
   width: 120%;
-  max-width: 90vw; }
+  max-width: 90vw;
+  border-radius: 2px; }
+
+@media screen and (max-width: 769px) {
+  .highlight {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0; } }

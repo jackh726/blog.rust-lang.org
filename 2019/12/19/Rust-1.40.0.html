@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>Announcing Rust 1.40.0</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Dec. 19, 2019 &middot; The Rust Release Team
@@ -86,9 +76,9 @@
 <pre><code class="language-console">rustup update stable
 </code></pre>
 <p>If you don't have it already, you can <a href="https://www.rust-lang.org/install.html">get <code>rustup</code></a> from the appropriate page on our website, and check out the <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1400-2019-12-19">detailed release notes for 1.40.0</a> on GitHub.</p>
-<h2><a href="#whats-in-1.40.0-stable" aria-hidden="true" class="anchor" id="whats-in-1.40.0-stable"></a>What's in 1.40.0 stable</h2>
+<h2><a href="#whats-in-1400-stable" aria-hidden="true" class="anchor" id="whats-in-1400-stable"></a>What's in 1.40.0 stable</h2>
 <p>The highlights of Rust 1.40.0 include <code>#[non_exhaustive]</code> and improvements to <code>macros!()</code> and <code>#[attribute]</code>s. Finally, borrow-check migration warnings have become hard errors in Rust 2015. See the <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1400-2019-12-19">detailed release notes</a> for additional information.</p>
-<h3><a href="#[non_exhaustive]-structs,-enums,-and-variants" aria-hidden="true" class="anchor" id="[non_exhaustive]-structs,-enums,-and-variants"></a><code>#[non_exhaustive]</code> structs, enums, and variants</h3>
+<h3><a href="#non_exhaustive-structs-enums-and-variants" aria-hidden="true" class="anchor" id="non_exhaustive-structs-enums-and-variants"></a><code>#[non_exhaustive]</code> structs, enums, and variants</h3>
 <p>Suppose you're a library author of a crate <code>alpha</code>, that has a <code>pub struct Foo</code>. You would like to make <code>alpha::Foo</code>'s fields <code>pub</code> as well, but you're not sure whether you might be adding more fields to <code>Foo</code> in future releases. So now you have a dilemma: either you make the fields private, with the drawbacks that follow, or you risk users depending on the exact fields, breaking their code when you add a new one. Rust 1.40.0 introduces a way to break the logjam: <code>#[non_exhaustive]</code>.</p>
 <p>The attribute <code>#[non_exhaustive]</code>, when attached to a <code>struct</code> or the variant of an <code>enum</code>, will prevent code outside of the crate defining it from constructing said <code>struct</code> or variant. To avoid future breakage, other crates are also prevented from exhaustively matching on the fields. The following example illustrates errors in <code>beta</code> which depends on <code>alpha</code>:</p>
 <pre><code class="language-rust">// alpha/lib.rs:
@@ -232,7 +222,7 @@ accept_meta!( my::path { a b c } );
 <h3><a href="#other-changes" aria-hidden="true" class="anchor" id="other-changes"></a>Other changes</h3>
 <p>There are other changes in the Rust 1.40.0 release: check out what changed in <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1400-2019-12-19">Rust</a>, <a href="https://github.com/rust-lang/cargo/blob/master/CHANGELOG.md#cargo-140-2019-12-19">Cargo</a>, and <a href="https://github.com/rust-lang/rust-clippy/blob/master/CHANGELOG.md#rust-140">Clippy</a>.</p>
 <p>Please also see the <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#compatibility-notes">compatibility notes</a> to check if you're affected by those changes.</p>
-<h2><a href="#contributors-to-140.0" aria-hidden="true" class="anchor" id="contributors-to-140.0"></a>Contributors to 1.40.0</h2>
+<h2><a href="#contributors-to-1400" aria-hidden="true" class="anchor" id="contributors-to-1400"></a>Contributors to 1.40.0</h2>
 <p>Many people came together to create Rust 1.40.0. We couldn't have done it
 without all of you. <a href="https://thanks.rust-lang.org/rust/1.40.0/">Thanks!</a></p>
 
@@ -263,10 +253,17 @@ without all of you. <a href="https://thanks.rust-lang.org/rust/1.40.0/">Thanks!<
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

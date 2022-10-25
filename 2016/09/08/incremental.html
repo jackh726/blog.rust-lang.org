@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>Incremental Compilation</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Sept. 8, 2016 &middot; Michael Woerister
@@ -147,7 +137,7 @@ same as at the source level, will end up exactly the same, bit for bit.
 Incremental compilation aims at retaining as much of those unchanged
 parts as possible while redoing only that amount of work that actually <em>must</em>
 be redone.</p>
-<h1><a href="#how-do-you-make-something-incremental"?" aria-hidden="true" class="anchor" id="how-do-you-make-something-incremental"?"></a>How Do You Make Something &quot;Incremental&quot;?</h1>
+<h1><a href="#how-do-you-make-something-incremental" aria-hidden="true" class="anchor" id="how-do-you-make-something-incremental"></a>How Do You Make Something &quot;Incremental&quot;?</h1>
 <p>We have already heard that computing something incrementally means updating
 only those parts of the computation's output that need to be adapted in
 response to a given change in the computation's inputs.
@@ -340,7 +330,7 @@ description of what the dependency graph for a given program ought to look like.
 This makes sure that the actual graph and the reference graph are arrived at
 via <strong>different methods</strong>, reducing the risk that both the compiler and the
 test case agree on the same, yet wrong, value.</p>
-<h1><a href="#faster!-up-to-15%-or-more."*" aria-hidden="true" class="anchor" id="faster!-up-to-15%-or-more."*"></a>&quot;Faster! Up to 15% or More.&quot;<a href="https://xkcd.com/870/">*</a></h1>
+<h1><a href="#faster-up-to-15-or-more" aria-hidden="true" class="anchor" id="faster-up-to-15-or-more"></a>&quot;Faster! Up to 15% or More.&quot;<a href="https://xkcd.com/870/">*</a></h1>
 <p>Let's take a look at some of the implications of what we've learned so far:</p>
 <ul>
 <li>The dependency graph reflects the actual dependencies between parts of the
@@ -501,10 +491,17 @@ or ask around in the <a href="https://www.rust-lang.org/community.html">#rustc c
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

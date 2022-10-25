@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>2019-10-10 Compiler Team Triage Meeting</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Oct. 15, 2019 &middot; Wesley Wiser
@@ -106,11 +96,11 @@ Each week, we have general announcements from the team followed by check-ins fro
 </li>
 </ul>
 <h2><a href="#working-group-sync" aria-hidden="true" class="anchor" id="working-group-sync"></a>Working group sync</h2>
-<h3><a href="#wg-learning" aria-hidden="true" class="anchor" id="wg-learning"></a><a href="https://rust-lang.github.io/compiler-team/working-groups/learning/">wg-learning</a></h3>
-<p><code>wg-learning</code> aims to make the compiler easier to learn by ensuring that <a href="https://rustc-dev-guide.rust-lang.org/">rustc-dev-guide</a> and api docs are “complete”.</p>
+<h3><a href="#wg-rustc-dev-guide" aria-hidden="true" class="anchor" id="wg-rustc-dev-guide"></a><a href="https://rust-lang.github.io/compiler-team/working-groups/rustc-dev-guide/">wg-rustc-dev-guide</a></h3>
+<p><code>wg-rustc-dev-guide</code> aims to make the compiler easier to learn by ensuring that <a href="https://rustc-dev-guide.rust-lang.org/">rustc-dev-guide</a> and api docs are “complete”.</p>
 <ul>
 <li>
-<p><code>wg-learning</code> has been working on transcribing videos from the <a href="https://www.youtube.com/watch?v=elBxMRSNYr4&list=PL85XCvVPmGQhOL-J2Ng7qlPvDVOwYpGTN">compiler lecture series</a> into <a href="https://rustc-dev-guide.rust-lang.org/">rustc-dev-guide</a> chapters.</p>
+<p><code>wg-rustc-dev-guide</code> has been working on transcribing videos from the <a href="https://www.youtube.com/watch?v=elBxMRSNYr4&list=PL85XCvVPmGQhOL-J2Ng7qlPvDVOwYpGTN">compiler lecture series</a> into <a href="https://rustc-dev-guide.rust-lang.org/">rustc-dev-guide</a> chapters.</p>
 </li>
 <li>
 <p>Originally, individuals were assigned one or lectures to complete but that hasn't worked very well.</p>
@@ -163,10 +153,17 @@ Each week, we have general announcements from the team followed by check-ins fro
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

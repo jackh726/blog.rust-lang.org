@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>2019-11-05 Infrastructure Team Meeting</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Nov. 6, 2019 &middot; Pietro Albini
@@ -84,7 +74,7 @@
       <p>Meeting run by shepmaster. Minutes written by pietroalbini.<br />
 Attending: aidanhs, alexcrichton, kennytm, Mark-Simulacrum, pietroalbini, shepmaster<br />
 <a href="https://discordapp.com/channels/442252698964721669/443148319431065610/641335927721033732">Start of the conversation</a></p>
-<h2><a href="#removing-msys2-ca-certificates-workaround-p-high-issue)" aria-hidden="true" class="anchor" id="removing-msys2-ca-certificates-workaround-p-high-issue)"></a>Removing MSYS2 ca-certificates workaround (P-high issue)</h2>
+<h2><a href="#removing-msys2-ca-certificates-workaround-p-high-issue" aria-hidden="true" class="anchor" id="removing-msys2-ca-certificates-workaround-p-high-issue"></a>Removing MSYS2 ca-certificates workaround (P-high issue)</h2>
 <p>A few weeks ago our CI broke due to a broken <code>ca-certificates</code> MSYS2 package,
 which caused all Windows builders to fail. The temporary patch was to install a
 vendored copy of that package, and since it’s not needed anymore pietroalbini
@@ -96,11 +86,11 @@ downgrade the issue to P-medium and to talk about mirroring and vendoring at
 the All Hands 2020. In preparation of that meeting it will be useful to audit
 what we mirror at the moment and how old that is, but it’s not urgent and
 nobody has the time to work on it right now.</p>
-<h2><a href="#figuring-out-data-retention-on-azure-pipelines-p-medium-issue)" aria-hidden="true" class="anchor" id="figuring-out-data-retention-on-azure-pipelines-p-medium-issue)"></a>Figuring out data retention on Azure Pipelines (P-medium issue)</h2>
+<h2><a href="#figuring-out-data-retention-on-azure-pipelines-p-medium-issue" aria-hidden="true" class="anchor" id="figuring-out-data-retention-on-azure-pipelines-p-medium-issue"></a>Figuring out data retention on Azure Pipelines (P-medium issue)</h2>
 <p>This is not yet an issue, as the current retention is configured to 2 years.
 We’re waiting on some talks with Microsoft to settle before starting to poke
 people about this again.</p>
-<h2><a href="#re-enable-llvmdebug-assertions-on-slow-builders-(p-medium-issue)" aria-hidden="true" class="anchor" id="re-enable-llvmdebug-assertions-on-slow-builders-(p-medium-issue)"></a>Re-enable LLVM/debug assertions on slow builders (P-medium issue)</h2>
+<h2><a href="#re-enable-llvmdebug-assertions-on-slow-builders-p-medium-issue" aria-hidden="true" class="anchor" id="re-enable-llvmdebug-assertions-on-slow-builders-p-medium-issue"></a>Re-enable LLVM/debug assertions on slow builders (P-medium issue)</h2>
 <p>We still don’t have the time budget to enable them back, but increasing the
 core count should allow us to do that.</p>
 <h2><a href="#new-server-for-perf" aria-hidden="true" class="anchor" id="new-server-for-perf"></a>New server for perf</h2>
@@ -110,7 +100,7 @@ server from Hetzner as a replacement benchmarking machine for perf, paid by
 Mozilla. We’re waiting on Hetzner to give us access to it before simulacrum can
 try it out and configure it. If we don’t get access in a few days alexcrichton
 is going to ping them.</p>
-<h2><a href="#lifecycle-policy-for-staticrust-lang.org" aria-hidden="true" class="anchor" id="lifecycle-policy-for-staticrust-lang.org"></a>Lifecycle policy for static.rust-lang.org</h2>
+<h2><a href="#lifecycle-policy-for-staticrust-langorg" aria-hidden="true" class="anchor" id="lifecycle-policy-for-staticrust-langorg"></a>Lifecycle policy for static.rust-lang.org</h2>
 <p>static.rust-lang.org is backed by a S3 bucket, and since 2016 versioning is
 enabled on the bucket to prevent issues with accidental file deletions. Some of
 the files in that bucket are overridden each day though (for example nightly
@@ -178,10 +168,17 @@ we’ll keep doing that for a while. aidanhs is going to run the next meeting.</
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>Recent and future pattern matching improvements</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Mar. 4, 2020 &middot; Mazdak &quot;Centril&quot; Farrokhzad
@@ -87,7 +77,7 @@
 </blockquote>
 <p>Pattern matching in Rust works by checking if a <a href="https://doc.rust-lang.org/reference/expressions.html#place-expressions-and-value-expressions"><em>place</em></a> in memory (the &quot;data&quot;) matches a certain <em>pattern</em>. In this post, we will look at some recent improvements to patterns soon available in stable Rust as well as some more already available in nightly.</p>
 <p>If you are familiar with the nightly features discussed and would like to help out with the efforts to drive them to stable, jump ahead to <a href="#how-can-i-help?">*How can I help?</a>.</p>
-<h2><a href="#subslice-patterns-[head,-tail-@-..]" aria-hidden="true" class="anchor" id="subslice-patterns-[head,-tail-@-..]"></a>Subslice patterns, <code>[head, tail @ ..]</code></h2>
+<h2><a href="#subslice-patterns-head-tail--" aria-hidden="true" class="anchor" id="subslice-patterns-head-tail--"></a>Subslice patterns, <code>[head, tail @ ..]</code></h2>
 <p>Lists are one of the most basic and common data structures found in software. In Rust, lists are usually a contiguous sequence of elements in memory, or a <em>slice</em>.</p>
 <p>Since slices are so commonplace, it is important that working with them is easy. To that end, we stabilized <a href="https://blog.rust-lang.org/2018/05/10/Rust-1.26.html#basic-slice-patterns"><em>fixed-length slice patterns</em> in Rust 1.26.0</a>. So now it is possible to e.g., write <code>let [a, b, c] = my_array;</code> to destructure an array of 3 elements. Oftentimes, however, we're working with a slice of unknown length, so given only fixed-length slice patterns, we have to provide a fallback <code>match</code> arm with e.g. <code>_</code> as the pattern.</p>
 <p>In Rust 1.42.0, <a href="https://github.com/rust-lang/rust/pull/67712">we are stabilizing <em>subslice patterns</em></a>. To introduce a subslice pattern, we use <code>..</code> which denotes a variable-length gap, matching as many elements as possible not matched by the patterns before and after the <code>..</code>. For example, in a parser, we would like to error when a list of attributes, <code>attrs</code>, is not followed by an item, <a href="https://doc.rust-lang.org/nightly/nightly-rustc/rustc_parse/parser/struct.Parser.html#method.recover_attrs_no_item">so we write</a>:</p>
@@ -266,10 +256,17 @@ fn main() {
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

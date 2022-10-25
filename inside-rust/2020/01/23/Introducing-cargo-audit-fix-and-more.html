@@ -2,33 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>cargo-audit v0.11: Introducing the `fix` feature, yanked crate detection, and more | Inside Rust Blog</title>
+    <title>cargo-audit v0.11: Introducing the &#x60;fix&#x60; feature, yanked crate detection, and more | Inside Rust Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Empowering everyone to build reliable and efficient software.">
      <!-- Twitter card -->
  <meta name="twitter:card" content="summary">
  <meta name="twitter:site" content="@rustlang">
  <meta name="twitter:creator" content="@rustlang">
- <meta name="twitter:title" content="cargo-audit v0.11: Introducing the `fix` feature, yanked crate detection, and more | Inside Rust Blog">
+ <meta name="twitter:title" content="cargo-audit v0.11: Introducing the &#x60;fix&#x60; feature, yanked crate detection, and more | Inside Rust Blog">
  <meta name="twitter:description" content="Want to follow along with Rust development? Curious how you might get involved? Take a look!">
 <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
 
 <!-- Facebook OpenGraph -->
-<meta property="og:title" content="cargo-audit v0.11: Introducing the `fix` feature, yanked crate detection, and more | Inside Rust Blog" />
+<meta property="og:title" content="cargo-audit v0.11: Introducing the &#x60;fix&#x60; feature, yanked crate detection, and more | Inside Rust Blog" />
 <meta property="og:description" content="Want to follow along with Rust development? Curious how you might get involved? Take a look!">
 <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
 
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -69,11 +59,11 @@
   </ul>
 </nav>
 
-<section id="cargo-audit v0.11: Introducing the `fix` feature, yanked crate detection, and more" class="white">
+<section id="cargo-audit v0.11: Introducing the &#x60;fix&#x60; feature, yanked crate detection, and more" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
-      <h2>cargo-audit v0.11: Introducing the `fix` feature, yanked crate detection, and more</h2>
-      <div class="highlight"></div>
+      <h2>cargo-audit v0.11: Introducing the &#x60;fix&#x60; feature, yanked crate detection, and more</h2>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Jan. 23, 2020 &middot; Tony Arcieri
@@ -89,7 +79,7 @@
 <pre><code>$ cargo install cargo-audit --features=fix
 </code></pre>
 <p>This will perform the same audit process as <code>cargo audit</code> initially, and then attempt to apply fixes to your <code>Cargo.toml</code>:</p>
-<p><img src="https://raw.githubusercontent.com/RustSec/cargo-audit/c857beb/img/screenshot-fix.png" alt="cargo audit fix screenshot" /></p>
+<p><img src="/images/inside-rust/2020-01-23-Introducing-cargo-audit-fix-and-more/cargo-audit-fix.png" alt="cargo audit fix screenshot" /></p>
 <p>Under the hood, it uses <a href="https://github.com/killercup/cargo-edit">cargo-edit</a> (as a library) to perform modifications to your <code>Cargo.toml</code> file, using the fixed version requirements listed in the advisory to try to perform an automatic upgrade to a non-vulnerable version of a dependency for each advisory.</p>
 <p>Note once more that this is a <em>new, experimental feature</em> and as such it's bound to have bugs. If you're worried, you can use <code>cargo audit fix --dry-run</code> to perform a dry run only. And if you do encounter bugs, please <a href="https://github.com/rustsec/cargo-audit/issues">file a bug report</a>.</p>
 <p>We'd like to thank Reza Fatahi and Hanif Ariffin for their work in contributing this feature.</p>
@@ -101,7 +91,7 @@
 <p>or if you prefer to be more explicit:</p>
 <pre><code>$ cargo audit --deny-warnings
 </code></pre>
-<h2><a href="#compatibility-with-the-new-v2"-format-for-cargo.lock" aria-hidden="true" class="anchor" id="compatibility-with-the-new-v2"-format-for-cargo.lock"></a>Compatibility with the new &quot;V2&quot; format for <code>Cargo.lock</code></h2>
+<h2><a href="#compatibility-with-the-new-v2-format-for-cargolock" aria-hidden="true" class="anchor" id="compatibility-with-the-new-v2-format-for-cargolock"></a>Compatibility with the new &quot;V2&quot; format for <code>Cargo.lock</code></h2>
 <p>Rust 1.39 shipped support for a new <a href="https://github.com/rust-lang/cargo/pull/7070">merge-friendly <code>Cargo.lock</code> format</a>.</p>
 <p><code>cargo audit</code> consumes <code>Cargo.lock</code> directly, and while the V2 format change didn't break the core vulnerability-auditing functionality of <code>cargo audit</code>, several minor features regressed because of this, such as displaying dependency trees for vulnerable dependencies.</p>
 <p>This release also upgrades to version 4.0 of the <a href="https://github.com/RustSec/cargo-lock"><code>cargo-lock</code> crate</a>, which includes full support for the V2 <code>Cargo.lock</code> format and constructs a representation of a lockfile which is the same across the V1 and V2 formats.</p>
@@ -135,10 +125,17 @@
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

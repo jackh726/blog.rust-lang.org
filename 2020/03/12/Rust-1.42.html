@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>Announcing Rust 1.42.0</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Mar. 12, 2020 &middot; The Rust Release Team
@@ -86,7 +76,7 @@
 <pre><code class="language-console">rustup update stable
 </code></pre>
 <p>If you don't have it already, you can <a href="https://www.rust-lang.org/install.html">get <code>rustup</code></a> from the appropriate page on our website, and check out the <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1420-2020-03-12">detailed release notes for 1.42.0</a> on GitHub.</p>
-<h2><a href="#whats-in-1.42.0-stable" aria-hidden="true" class="anchor" id="whats-in-1.42.0-stable"></a>What's in 1.42.0 stable</h2>
+<h2><a href="#whats-in-1420-stable" aria-hidden="true" class="anchor" id="whats-in-1420-stable"></a>What's in 1.42.0 stable</h2>
 <p>The highlights of Rust 1.42.0 include: more useful panic messages when <code>unwrap</code>ping, subslice patterns, the deprecation of <code>Error::description</code>, and more. See the <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1420-2020-03-12">detailed release notes</a> to learn about other changes not covered by this post.</p>
 <h3><a href="#useful-line-numbers-in-option-and-result-panic-messages" aria-hidden="true" class="anchor" id="useful-line-numbers-in-option-and-result-panic-messages"></a>Useful line numbers in <code>Option</code> and <code>Result</code> panic messages</h3>
 <p>In Rust 1.41.1, calling <code>unwrap()</code> on an <code>Option::None</code> value would produce an error message looking something like this:</p>
@@ -155,7 +145,7 @@ assert!(matches!(foo, 'A'..='Z' | 'a'..='z'));
 let bar = Some(4);
 assert!(matches!(bar, Some(x) if x &gt; 2));
 </code></pre>
-<h3><a href="#use-proc_macro:tokenstream;-now-works" aria-hidden="true" class="anchor" id="use-proc_macro:tokenstream;-now-works"></a><code>use proc_macro::TokenStream;</code> now works</h3>
+<h3><a href="#use-proc_macrotokenstream-now-works" aria-hidden="true" class="anchor" id="use-proc_macrotokenstream-now-works"></a><code>use proc_macro::TokenStream;</code> now works</h3>
 <p>In Rust 2018, we <a href="https://doc.rust-lang.org/stable/edition-guide/rust-2018/module-system/path-clarity.html#no-more-extern-crate">removed the need for <code>extern crate</code></a>. But procedural macros were a bit special, and so when you were writing a procedural macro, you still needed to say <code>extern crate proc_macro;</code>.</p>
 <p>In this release, if you are using Cargo, <a href="https://github.com/rust-lang/cargo/pull/7700">you no longer need this line when working with the 2018 edition; you can use <code>use</code> like any other crate</a>. Given that most projects will already have a line similar to <code>use proc_macro::TokenStream;</code>, this change will mean that you can delete the <code>extern crate proc_macro;</code> line and your code will still work. This change is small, but brings procedural macros closer to regular code.</p>
 <h3><a href="#libraries" aria-hidden="true" class="anchor" id="libraries"></a>Libraries</h3>
@@ -177,7 +167,7 @@ to implement <code>Sized</code>.</a></li>
 <p>There are other changes in the Rust 1.42.0 release: check out what changed in <a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1420-2020-03-12">Rust</a>, <a href="https://github.com/rust-lang/cargo/blob/master/CHANGELOG.md#cargo-142-2020-03-12">Cargo</a>, and <a href="https://github.com/rust-lang/rust-clippy/blob/master/CHANGELOG.md#rust-142">Clippy</a>.</p>
 <h3><a href="#compatibility-notes" aria-hidden="true" class="anchor" id="compatibility-notes"></a>Compatibility Notes</h3>
 <p>We have two notable compatibility notes this release: a deprecation in the standard library, and a demotion of 32-bit Apple targets to Tier 3.</p>
-<h4><a href="#error:description-is-deprecated" aria-hidden="true" class="anchor" id="error:description-is-deprecated"></a>Error::Description is deprecated</h4>
+<h4><a href="#errordescription-is-deprecated" aria-hidden="true" class="anchor" id="errordescription-is-deprecated"></a>Error::Description is deprecated</h4>
 <p>Sometimes, mistakes are made. The <code>Error::description</code> method is now considered to be one of those mistakes. The problem is with its type signature:</p>
 <pre><code class="language-rust">fn description(&amp;self) -&gt; &amp;str
 </code></pre>
@@ -185,7 +175,7 @@ to implement <code>Sized</code>.</a></li>
 <p>This API has existed since Rust 1.0. We've been working towards this goal for a long time: back in Rust 1.27, we <a href="https://github.com/rust-lang/rust/pull/50163">&quot;soft deprecated&quot; this method</a>. What that meant in practice was, we gave the function a default implementation. This means that users were no longer forced to implement this method when implementing the <code>Error</code> trait. In this release, <a href="https://github.com/rust-lang/rust/pull/66919/">we mark it as <em>actually</em> deprecated</a>, and took some steps to de-emphasize the method in <code>Error</code>'s documentation. Due to our stability policy, <code>description</code> will never be removed, and so this is as far as we can go.</p>
 <h4><a href="#downgrading-32-bit-apple-targets" aria-hidden="true" class="anchor" id="downgrading-32-bit-apple-targets"></a>Downgrading 32-bit Apple targets</h4>
 <p>Apple is no longer supporting 32-bit targets, and so, neither are we. They have been downgraded to Tier 3 support by the project. For more details on this, check out <a href="https://blog.rust-lang.org/2020/01/03/reducing-support-for-32-bit-apple-targets.html">this post</a> from back in January, which covers everything in detail.</p>
-<h2><a href="#contributors-to-142.0" aria-hidden="true" class="anchor" id="contributors-to-142.0"></a>Contributors to 1.42.0</h2>
+<h2><a href="#contributors-to-1420" aria-hidden="true" class="anchor" id="contributors-to-1420"></a>Contributors to 1.42.0</h2>
 <p>Many people came together to create Rust 1.42.0. We couldn't have done it without all of you. <a href="https://thanks.rust-lang.org/rust/1.42.0/">Thanks!</a></p>
 
     </div>
@@ -215,10 +205,17 @@ to implement <code>Sized</code>.</a></li>
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>

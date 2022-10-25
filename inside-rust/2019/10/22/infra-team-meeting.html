@@ -20,16 +20,6 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 
-<!-- fonts -->
-<link rel="preload" as="font" crossorigin href="/fonts/AlfaSlabOne-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-ExtraBoldItalic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Italic.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-Regular.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBold.ttf">
-<link rel="preload" as="font" crossorigin href="/fonts/FiraSans-SemiBoldItalic.ttf">
-
 <!-- styles -->
 <link rel="stylesheet" href="/styles/vendor.css"/>
 <link rel="stylesheet" href="/styles/fonts.css"/>
@@ -38,9 +28,9 @@
 
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="manifest" href="/images/site.webmanifest">
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#00aba9">
@@ -73,7 +63,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw8-l center f3">
     <header>
       <h2>2019-10-22 Infrastructure Team Meeting</h2>
-      <div class="highlight"></div>
+      <div class="highlight mt2 mb3"></div>
     </header>
 
     <div class="publish-date-author">Oct. 22, 2019 &middot; Pietro Albini
@@ -97,7 +87,7 @@ every 5 minutes.</li>
 published soon on the &quot;Inside Rust&quot; blog and work on the action items from it
 is ongoing.</li>
 </ul>
-<h2><a href="#putting-a-cdn-in-front-of-the-ci-s3-buckets-pietroalbini)" aria-hidden="true" class="anchor" id="putting-a-cdn-in-front-of-the-ci-s3-buckets-pietroalbini)"></a>Putting a CDN in front of the CI S3 buckets (pietroalbini)</h2>
+<h2><a href="#putting-a-cdn-in-front-of-the-ci-s3-buckets-pietroalbini" aria-hidden="true" class="anchor" id="putting-a-cdn-in-front-of-the-ci-s3-buckets-pietroalbini"></a>Putting a CDN in front of the CI S3 buckets (pietroalbini)</h2>
 <p>After an audit of our bandwidth usage for the <code>rust-lang-ci-sccache2</code> and
 <code>rust-lang-ci-mirrors</code> S3 buckets we discovered CI is pulling respectively 8.3
 TB and 1.4 TB from them each month. Egress from S3 is pricey (0.09$/GB), while
@@ -114,7 +104,7 @@ implementation work. The caches CDN is also going to query a new
 <a href="https://ci-mirrors.rust-lang.org">ci-mirrors.rust-lang.org</a>, and is going to
 do the implementation work to both create a CDN distribution for caches and
 switch the CI to query the CDN.</p>
-<h2><a href="#moving-infra-documentation-to-the-forge-pietroalbini)" aria-hidden="true" class="anchor" id="moving-infra-documentation-to-the-forge-pietroalbini)"></a>Moving infra documentation to the forge (pietroalbini)</h2>
+<h2><a href="#moving-infra-documentation-to-the-forge-pietroalbini" aria-hidden="true" class="anchor" id="moving-infra-documentation-to-the-forge-pietroalbini"></a>Moving infra documentation to the forge (pietroalbini)</h2>
 <p>There is an effort in the project to centralize all the internal documentation
 <a href="https://forge.rust-lang.org">on the forge</a>. pietroalbini proposed to move all
 the infra team documentation to it. Everyone agreed, as we find value in having
@@ -151,10 +141,17 @@ europeans and at the same time for everyone else on the team.</p>
       </div>
       <div class="four columns mt3 mt0-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang" target="_blank" rel="noopener" alt="twitter link"><img src="/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank" rel="noopener" alt="youtube link"><img style="padding-top: 6px; padding-bottom:6px" src="/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" alt="discord link"><img src="/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang" target="_blank" rel="noopener" alt="github link"><img src="/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
+        <h4 class="mt4 mb3">RSS</h4>
+        <ul>
+          <li><a href="/feed.xml">Main Blog</a></li>
+          <li><a href="/inside-rust/feed.xml">"Inside Rust" Blog</a></li>
+        </ul>
       </div>
 
     </div>
