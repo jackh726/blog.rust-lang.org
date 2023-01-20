@@ -10,26 +10,431 @@
         <name>Maintained by the Rust Teams.</name>
         <uri>https://github.com/rust-lang/blog.rust-lang.org/</uri>
     </author>
-    <updated>2022-10-25T05:46:30+00:00</updated>
+    <updated>2023-01-20T19:15:04+00:00</updated>
 
     
     <entry>
-        <title>Rust Compiler July Steering Cycle</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/07/02/compiler-team-july-steering-cycle.html" type="text/html" title="Rust Compiler July Steering Cycle" />
-        <published>2021-07-02T00:00:00+00:00</published>
-        <updated>2021-07-02T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/07/02/compiler-team-july-steering-cycle.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/07/02/compiler-team-july-steering-cycle.html">&lt;p&gt;n &lt;a href&#x3D;&quot;https://zulip-archive.rust-lang.org/238009tcompilermeetings/74498steeringmeeting20210702fingerprintsplanning.html&quot;&gt;Friday, July 2nd&lt;/a&gt;, the Rust Compiler team had a planning meeting for the July steering cycle, followed by a continuation of an ongoing discussion of the 1.52.0 fingerprint event.&lt;/p&gt;
+        <title>1.66.0 pre-release testing</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/12/12/1.66.0-prerelease.html" type="text/html" title="1.66.0 pre-release testing" />
+        <published>2022-12-12T00:00:00+00:00</published>
+        <updated>2022-12-12T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/12/12/1.66.0-prerelease.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/12/12/1.66.0-prerelease.html">&lt;p&gt;The 1.66.0 pre-release is ready for testing. The release is scheduled for
+December 15. &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1660-2022-12-15&quot;&gt;Release notes can be found here.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can try it out locally by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-plain&quot;&gt;RUSTUP_DIST_SERVER&#x3D;https://dev-static.rust-lang.org rustup update stable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The index is &lt;a href&#x3D;&quot;https://dev-static.rust-lang.org/dist/2022-12-12/index.html&quot;&gt;https://dev-static.rust-lang.org/dist/2022-12-12/index.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can leave feedback on the &lt;a href&#x3D;&quot;https://internals.rust-lang.org/t/rust-1-66-0-pre-release-testing/17966&quot;&gt;internals thread&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The release team is also thinking about changes to our pre-release process:
+we&#x27;d love your feedback &lt;a href&#x3D;&quot;https://github.com/rust-lang/release-team/issues/16&quot;&gt;on this GitHub issue&lt;/a&gt;.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Release automation</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Please welcome The 8472 to the Library team</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/11/29/libs-member.html" type="text/html" title="Please welcome The 8472 to the Library team" />
+        <published>2022-11-29T00:00:00+00:00</published>
+        <updated>2022-11-29T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/11/29/libs-member.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/11/29/libs-member.html">&lt;p&gt;We&#x27;re very excited to announce that &lt;a href&#x3D;&quot;https://github.com/the8472&quot;&gt;The 8472&lt;/a&gt;
+has joined &lt;a href&#x3D;&quot;https://www.rust-lang.org/governance/teams/library&quot;&gt;the Library team&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;The 8472 has been working on &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pulls?q&#x3D;is%3Apr+author%3Athe8472&quot;&gt;many optimizations and other improvements&lt;/a&gt; to the standard library,
+is &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pulls?q&#x3D;involves%3Athe8472&quot;&gt;involved in many library-related changes and discussions&lt;/a&gt;,
+and regularly &lt;a href&#x3D;&quot;https://github.com/search?q&#x3D;repo%3Arust-lang%2Frust+%22r%3Dthe8472%22&amp;amp;type&#x3D;commits&amp;amp;s&#x3D;committer-date&amp;amp;o&#x3D;desc&quot;&gt;reviews&lt;/a&gt; pull requests.&lt;/p&gt;
+&lt;p&gt;Congratulations The 8472, and thanks for everything you do!&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Mara Bos</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Async fn in trait MVP comes to nightly</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/11/17/async-fn-in-trait-nightly.html" type="text/html" title="Async fn in trait MVP comes to nightly" />
+        <published>2022-11-17T00:00:00+00:00</published>
+        <updated>2022-11-17T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/11/17/async-fn-in-trait-nightly.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/11/17/async-fn-in-trait-nightly.html">&lt;p&gt;The async working group is excited to announce that &lt;code&gt;async fn&lt;/code&gt; can now be used in traits in the nightly compiler. You can now write code like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;#![feature(async_fn_in_trait)]
+
+trait Database {
+    async fn fetch_data(&amp;amp;self) -&amp;gt; String;
+}
+
+impl Database for MyDb {
+    async fn fetch_data(&amp;amp;self) -&amp;gt; String { ... }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A full working example is available in the &lt;a href&#x3D;&quot;https://play.rust-lang.org/?version&#x3D;nightly&amp;amp;mode&#x3D;debug&amp;amp;edition&#x3D;2021&amp;amp;gist&#x3D;6ffde69ba43c6c5094b7fbdae11774a9&quot;&gt;playground&lt;/a&gt;. There are some limitations we&#x27;ll cover, as well as a few known bugs to be worked out, but we think it is ready for some users to try. Read on for the specifics.&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#recap-how-asyncawait-works-in-rust&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;recap-how-asyncawait-works-in-rust&quot;&gt;&lt;/a&gt;Recap: How async/await works in Rust&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;async&lt;/code&gt; and &lt;code&gt;.await&lt;/code&gt; were a major improvement in the ergonomics of writing async code in Rust. In Rust, an &lt;code&gt;async fn&lt;/code&gt; returns a &lt;code&gt;Future&lt;/code&gt;, which is some object that represents an ongoing asynchronous computation.&lt;/p&gt;
+&lt;p&gt;The type of the future does not actually appear in the signature of an &lt;code&gt;async fn&lt;/code&gt;. When you write an async function like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;async fn fetch_data(db: &amp;amp;MyDb) -&amp;gt; String { ... }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The compiler rewrites it to something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;fn fetch_data&amp;lt;&#x27;a&amp;gt;(db: &amp;amp;&#x27;a MyDb) -&amp;gt; impl Future&amp;lt;Output &#x3D; String&amp;gt; + &#x27;a {
+    async move { ... }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This &amp;quot;desugared&amp;quot; signature is something you can write yourself, and it&#x27;s useful for examining what goes on under the hood. The &lt;code&gt;impl Future&lt;/code&gt; syntax here represents some &lt;em&gt;opaque type&lt;/em&gt; that implements &lt;code&gt;Future&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The future is a state machine responsible for knowing how to continue making progress the next time it wakes up. When you write code in an &lt;code&gt;async&lt;/code&gt; block, the compiler generates a future type specific to that async block for you. This future type does not have a name, so we must instead use an opaque type in the function signature.&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#the-historic-problem-of-async-fn-in-trait&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;the-historic-problem-of-async-fn-in-trait&quot;&gt;&lt;/a&gt;The historic problem of &lt;code&gt;async fn&lt;/code&gt; in trait&lt;/h2&gt;
+&lt;p&gt;Traits are the fundamental mechanism of abstraction in Rust. So what happens if you want to put an async method in a trait? Each &lt;code&gt;async&lt;/code&gt; block or function creates a unique type, so you would want to express that each implementation can have a different Future for the return type. Thankfully, we have associated types for this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;trait Database {
+    type FetchData&amp;lt;&#x27;a&amp;gt;: Future&amp;lt;Output &#x3D; String&amp;gt; + &#x27;a where Self: &#x27;a;
+    fn fetch_data&amp;lt;&#x27;a&amp;gt;(&amp;amp;&#x27;a self) -&amp;gt; FetchData&amp;lt;&#x27;a&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice that this associated type is generic. Generic associated types haven&#x27;t been supported in the language... &lt;a href&#x3D;&quot;https://blog.rust-lang.org/2022/10/28/gats-stabilization.html&quot;&gt;until now&lt;/a&gt;! Unfortunately though, even with GATs, you still can&#x27;t write a trait &lt;em&gt;implementation&lt;/em&gt; that uses &lt;code&gt;async&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;impl Database for MyDb {
+    type FetchData&amp;lt;&#x27;a&amp;gt; &#x3D; /* what type goes here??? */;
+    fn fetch_data&amp;lt;&#x27;a&amp;gt;(&amp;amp;&#x27;a self) -&amp;gt; FetchData&amp;lt;&#x27;a&amp;gt; { async move { ... } }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since you can&#x27;t name the type constructed by an async block, the only option is to use an opaque type (the &lt;code&gt;impl Future&lt;/code&gt; we saw earlier). But those are not supported in associated types!&lt;sup class&#x3D;&quot;footnote-ref&quot;&gt;&lt;a href&#x3D;&quot;#fn1&quot; id&#x3D;&quot;fnref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#workarounds-available-in-the-stable-compiler&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;workarounds-available-in-the-stable-compiler&quot;&gt;&lt;/a&gt;Workarounds available in the stable compiler&lt;/h3&gt;
+&lt;p&gt;So to write an &lt;code&gt;async fn&lt;/code&gt; in a trait we need a concrete type to specify in our impl. There are a couple ways of achieving this today.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#runtime-type-erasure&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;runtime-type-erasure&quot;&gt;&lt;/a&gt;Runtime type erasure&lt;/h4&gt;
+&lt;p&gt;First, we can avoid writing the future type by erasing it with &lt;code&gt;dyn&lt;/code&gt;. Taking our example from above, you would write your trait like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;trait Database {
+    fn fetch_data(&amp;amp;self)
+    -&amp;gt; Pin&amp;lt;Box&amp;lt;dyn Future&amp;lt;Output &#x3D; String&amp;gt; + Send + &#x27;_&amp;gt;&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is significantly more verbose, but it achieves the goal of combining async with traits. What&#x27;s more, the &lt;a href&#x3D;&quot;https://crates.io/crates/async-trait&quot;&gt;async-trait&lt;/a&gt; proc macro crate rewrites your code for you, allowing you to simply write&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;#[async_trait]
+trait Database {
+    async fn fetch_data(&amp;amp;self) -&amp;gt; String;
+}
+
+#[async_trait]
+impl Database for MyDb {
+    async fn fetch_data(&amp;amp;self) -&amp;gt; String { ... }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is an excellent solution for the people who can use it!&lt;/p&gt;
+&lt;p&gt;Unfortunately, not everyone can. You can&#x27;t use &lt;code&gt;Box&lt;/code&gt; in no_std contexts. Dynamic dispatch and allocation come with overhead that can be &lt;a href&#x3D;&quot;https://rust-lang.github.io/wg-async/vision/submitted_stories/status_quo/barbara_benchmarks_async_trait.html&quot;&gt;overwhelming&lt;/a&gt; for highly performance-sensitive code. Finally, it bakes a lot of assumptions into the trait itself: allocation with &lt;code&gt;Box&lt;/code&gt;, dynamic dispatch, and the &lt;code&gt;Send&lt;/code&gt;-ness of the futures. This makes it unsuitable for many libraries.&lt;/p&gt;
+&lt;p&gt;Besides, users &lt;a href&#x3D;&quot;https://rust-lang.github.io/wg-async/vision/submitted_stories/status_quo/alan_needs_async_in_traits.html&quot;&gt;expect&lt;/a&gt; to be able to write &lt;code&gt;async fn&lt;/code&gt; in traits, and the experience of adding an external crate dependency is a papercut that gives async Rust a reputation for being difficult to use.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#manual-poll-implementations&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;manual-poll-implementations&quot;&gt;&lt;/a&gt;Manual &lt;code&gt;poll&lt;/code&gt; implementations&lt;/h4&gt;
+&lt;p&gt;Traits that need to work with zero overhead or in no_std contexts have another option: they can take the concept of polling from the &lt;a href&#x3D;&quot;https://doc.rust-lang.org/stable/std/future/trait.Future.html&quot;&gt;&lt;code&gt;Future&lt;/code&gt; trait&lt;/a&gt; and build it directly into their interface. The &lt;code&gt;Future::poll&lt;/code&gt; method returns &lt;code&gt;Poll::Ready(Output)&lt;/code&gt; if the future is complete and &lt;code&gt;Poll::Pending&lt;/code&gt; if the future is waiting on some other event.&lt;/p&gt;
+&lt;p&gt;You can see this pattern, for example, in the current version of the unstable &lt;a href&#x3D;&quot;https://doc.rust-lang.org/stable/std/async_iter/trait.AsyncIterator.html&quot;&gt;AsyncIterator&lt;/a&gt; trait. The signature of &lt;code&gt;AsyncIterator::poll_next&lt;/code&gt; is a cross between &lt;code&gt;Future::poll&lt;/code&gt; and &lt;code&gt;Iterator::next&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;pub trait AsyncIterator {
+    type Item;
+
+    fn poll_next(
+        self: Pin&amp;lt;&amp;amp;mut Self&amp;gt;,
+        cx: &amp;amp;mut Context&amp;lt;&#x27;_&amp;gt;
+    ) -&amp;gt; Poll&amp;lt;Option&amp;lt;Self::Item&amp;gt;&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Before async/await, it was very common to write manual &lt;code&gt;poll&lt;/code&gt; implementations. Unfortunately, they proved challenging to write correctly. In the &lt;a href&#x3D;&quot;https://blog.rust-lang.org/2021/03/18/async-vision-doc.html&quot;&gt;vision document&lt;/a&gt; process we underwent last year, we received a number of reports on how this was &lt;a href&#x3D;&quot;https://rust-lang.github.io/wg-async/vision/submitted_stories/status_quo/alan_hates_writing_a_stream.html&quot;&gt;extremely difficult&lt;/a&gt; and a &lt;a href&#x3D;&quot;https://rust-lang.github.io/wg-async/vision/submitted_stories/status_quo/barbara_polls_a_mutex.html&quot;&gt;source of bugs&lt;/a&gt; for Rust users.&lt;/p&gt;
+&lt;p&gt;In fact, the difficulty of writing manual poll implementations was a primary reason for adding async/await to the core language in the first place.&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#whats-supported-in-nightly&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;whats-supported-in-nightly&quot;&gt;&lt;/a&gt;What&#x27;s supported in nightly&lt;/h2&gt;
+&lt;p&gt;We&#x27;ve been working to support &lt;code&gt;async fn&lt;/code&gt; directly in traits, and an implementation &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/101224&quot;&gt;recently landed&lt;/a&gt; in nightly! The feature still has some rough edges, but let&#x27;s take a look at what you can do with it.&lt;/p&gt;
+&lt;p&gt;First, as you might expect, you can write and implement traits just like the above.&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;#![feature(async_fn_in_trait)]
+
+trait Database {
+    async fn fetch_data(&amp;amp;self) -&amp;gt; String;
+}
+
+impl Database for MyDb {
+    async fn fetch_data(&amp;amp;self) -&amp;gt; String { ... }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;One thing this will allow us to do is standardize new traits we&#x27;ve been waiting on this feature for. For example, the &lt;code&gt;AsyncIterator&lt;/code&gt; trait from above is significantly more complicated than its analogue, &lt;code&gt;Iterator&lt;/code&gt;. With the new support, we can simply write this instead:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;#![feature(async_fn_in_trait)]
+
+trait AsyncIterator {
+    type Item;
+    async fn next(&amp;amp;mut self) -&amp;gt; Option&amp;lt;Self::Item&amp;gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There&#x27;s a decent chance that the trait in the standard library will end up exactly like this! For now, you can also use the one in the &lt;a href&#x3D;&quot;https://docs.rs/async-iterator/latest/async_iterator/&quot;&gt;&lt;code&gt;async_iterator&lt;/code&gt; crate&lt;/a&gt; and write generic code with it, just like you would normally.&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;async fn print_all&amp;lt;I: AsyncIterator&amp;gt;(mut count: I)
+where
+    I::Item: Display,
+{
+    while let Some(x) &#x3D; count.next().await {
+        println!(&amp;quot;{x}&amp;quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#limitation-spawning-from-generics&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;limitation-spawning-from-generics&quot;&gt;&lt;/a&gt;Limitation: Spawning from generics&lt;/h3&gt;
+&lt;p&gt;There is a catch! If you try to &lt;em&gt;spawn&lt;/em&gt; from a generic function like &lt;code&gt;print_all&lt;/code&gt;, and (like the majority of async users) you use a work stealing executor that requires spawned tasks to be &lt;code&gt;Send&lt;/code&gt;, you&#x27;ll hit an error which is not easily resolved.&lt;sup class&#x3D;&quot;footnote-ref&quot;&gt;&lt;a href&#x3D;&quot;#fn2&quot; id&#x3D;&quot;fnref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;fn spawn_print_all&amp;lt;I: AsyncIterator + Send + &#x27;static&amp;gt;(mut count: I)
+where
+    I::Item: Display,
+{
+    tokio::spawn(async move {
+        //       ^^^^^^^^^^^^
+        // ERROR: future cannot be sent between threads safely
+        while let Some(x) &#x3D; count.next().await {
+            //              ^^^^^^^^^^^^
+            // note: future is not &#x60;Send&#x60; as it awaits another future which is not &#x60;Send&#x60;
+            println!(&amp;quot;{x}&amp;quot;);
+        }
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see that we added an &lt;code&gt;I: Send&lt;/code&gt; bound in the function signature, but that was not enough. To satisfy this error we need to say that the &lt;em&gt;future returned by &lt;code&gt;next()&lt;/code&gt;&lt;/em&gt; is &lt;code&gt;Send&lt;/code&gt;. But as we saw at the beginning of this post, async functions return anonymous types. There&#x27;s no way to express bounds on those types.&lt;/p&gt;
+&lt;p&gt;There are potential solutions to this problem that we&#x27;ll be exploring in a follow-up post. But for now, there are a couple things you can do to get out of a situation like this.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#hypothesis-this-is-uncommon&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;hypothesis-this-is-uncommon&quot;&gt;&lt;/a&gt;Hypothesis: This is uncommon&lt;/h4&gt;
+&lt;p&gt;First, you &lt;em&gt;may&lt;/em&gt; be surprised to find that this situation just doesn&#x27;t occur that often in practice. For example, we can spawn a task that invokes the above &lt;code&gt;print_all&lt;/code&gt; function &lt;a href&#x3D;&quot;https://play.rust-lang.org/?version&#x3D;nightly&amp;amp;mode&#x3D;debug&amp;amp;edition&#x3D;2021&amp;amp;gist&#x3D;6ffde69ba43c6c5094b7fbdae11774a9&quot;&gt;without any problem&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;async fn do_something() {
+    let iter &#x3D; Countdown::new(10);
+    executor::spawn(print_all(iter));
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This works without any &lt;code&gt;Send&lt;/code&gt; bounds whatsoever! This works because &lt;code&gt;do_something&lt;/code&gt; knows the concrete type of our iterator, &lt;code&gt;Countdown&lt;/code&gt;. The compiler knows that this type is &lt;code&gt;Send&lt;/code&gt;, and that &lt;code&gt;print_all(iter)&lt;/code&gt; therefore produces a future that is &lt;code&gt;Send&lt;/code&gt;.&lt;sup class&#x3D;&quot;footnote-ref&quot;&gt;&lt;a href&#x3D;&quot;#fn3&quot; id&#x3D;&quot;fnref3&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;One hypothesis is that while people will hit this problem, they will encounter it relatively infrequently, because most of the time &lt;code&gt;spawn&lt;/code&gt; won&#x27;t be called in code that&#x27;s generic over a trait with async functions.&lt;/p&gt;
+&lt;p&gt;We would like to start gathering data on people&#x27;s actual experiences with this. If you have relevant experience to share, &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues/103854&quot;&gt;please comment on this issue&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#when-it-does-happen&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;when-it-does-happen&quot;&gt;&lt;/a&gt;When it does happen&lt;/h4&gt;
+&lt;p&gt;Eventually you probably &lt;em&gt;will&lt;/em&gt; want to spawn from a context that&#x27;s generic over an async trait that you call. What then!?&lt;/p&gt;
+&lt;p&gt;For now it&#x27;s possible to use another new nightly-only feature, &lt;code&gt;return_position_impl_trait_in_trait&lt;/code&gt;, to express the bound you need directly in your trait:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;#![feature(return_position_impl_trait_in_trait)]
+
+trait SpawnAsyncIterator: Send + &#x27;static {
+    type Item;
+    fn next(&amp;amp;mut self) -&amp;gt; impl Future&amp;lt;Output &#x3D; Option&amp;lt;Self::Item&amp;gt;&amp;gt; + Send + &#x27;_;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here we&#x27;ve &lt;em&gt;desugared&lt;/em&gt; our &lt;code&gt;async fn&lt;/code&gt; to a regular function returning &lt;code&gt;impl Future + &#x27;_&lt;/code&gt;, which works just like normal &lt;code&gt;async fn&lt;/code&gt;s do. It&#x27;s more verbose, but it gives us a place to put a &lt;code&gt;+ Send&lt;/code&gt; bound! What&#x27;s more, you can continue to use &lt;code&gt;async fn&lt;/code&gt; in an &lt;code&gt;impl&lt;/code&gt; of this trait.&lt;/p&gt;
+&lt;p&gt;The downside of this approach is that the trait becomes less generic, making it less suitable for library code. If you want to maintain two separate versions of a trait, you can do that, and (perhaps) provide macros to make it easier to implement both.&lt;/p&gt;
+&lt;p&gt;This solution is intended to be temporary. We&#x27;d like to implement a better solution in the language itself, but since this is a nightly-only feature we prefer to get more people trying it out as soon as possible.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#limitation-dynamic-dispatch&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;limitation-dynamic-dispatch&quot;&gt;&lt;/a&gt;Limitation: Dynamic dispatch&lt;/h3&gt;
+&lt;p&gt;There&#x27;s one final limitation: You can&#x27;t call an &lt;code&gt;async fn&lt;/code&gt; with a &lt;code&gt;dyn Trait&lt;/code&gt;. Designs to support this exist&lt;sup class&#x3D;&quot;footnote-ref&quot;&gt;&lt;a href&#x3D;&quot;#fn4&quot; id&#x3D;&quot;fnref4&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, but are in the earlier stages. If you need dynamic dispatch from a trait, you&#x27;re better off using the &lt;code&gt;async_trait&lt;/code&gt; macro for now.&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#path-to-stabilization&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;path-to-stabilization&quot;&gt;&lt;/a&gt;Path to stabilization&lt;/h2&gt;
+&lt;p&gt;The async working group would like to get something useful in the hands of Rust users, even if it doesn&#x27;t do &lt;em&gt;everything&lt;/em&gt; they might want. That&#x27;s why despite having some limitations, the current version of &lt;code&gt;async fn&lt;/code&gt; in traits might not be far off from stabilization.&lt;sup class&#x3D;&quot;footnote-ref&quot;&gt;&lt;a href&#x3D;&quot;#fn5&quot; id&#x3D;&quot;fnref5&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; You can follow progress by watching the &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues/91611&quot;&gt;tracking issue&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are two big questions to answer first:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Do we need to solve the &amp;quot;spawning from generics&amp;quot; (&lt;code&gt;Send&lt;/code&gt; bound) problem first?&lt;/strong&gt; Please leave feedback on &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues/103854&quot;&gt;this issue&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What other bugs and quality issues exist?&lt;/strong&gt; Please file &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues/new/choose&quot;&gt;new issues&lt;/a&gt; for these. You can view &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/labels/F-async_fn_in_trait&quot;&gt;known issues here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you&#x27;re an async Rust enthusiast and are willing to try experimental new features, we&#x27;d very much appreciate it if you gave it a spin!&lt;/p&gt;
+&lt;p&gt;If you use &lt;code&gt;#[async_trait]&lt;/code&gt;, you can try removing it from some traits (and their impls) where you don&#x27;t use dynamic dispatch. Or if you&#x27;re writing new async code, try using it there. Either way, you can tell us about your experience at the links above.&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#conclusion&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This work was made possible thanks to the efforts of many people, including&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Michael Goulet&lt;/li&gt;
+&lt;li&gt;Santiago Pastorino&lt;/li&gt;
+&lt;li&gt;Oli Scherer&lt;/li&gt;
+&lt;li&gt;Eric Holk&lt;/li&gt;
+&lt;li&gt;Dan Johnson&lt;/li&gt;
+&lt;li&gt;Bryan Garza&lt;/li&gt;
+&lt;li&gt;Niko Matsakis&lt;/li&gt;
+&lt;li&gt;Tyler Mandry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition it was built on top of years of compiler work that enabled us to ship &lt;a href&#x3D;&quot;https://blog.rust-lang.org/2022/10/28/gats-stabilization.html&quot;&gt;GATs&lt;/a&gt; as well as other fundamental type system improvements. We&#x27;re deeply grateful to all those who contributed; this work would not be possible without you. Thank you!&lt;/p&gt;
+&lt;p&gt;To learn more about this feature and the challenges behind it, check out the &lt;a href&#x3D;&quot;https://rust-lang.github.io/rfcs/3185-static-async-fn-in-trait.html&quot;&gt;Static async fn in traits RFC&lt;/a&gt; and &lt;a href&#x3D;&quot;https://smallcultfollowing.com/babysteps/blog/2019/10/26/async-fn-in-traits-are-hard/&quot;&gt;why async fn in traits are hard&lt;/a&gt;. Also stay tuned for a follow-up post where we explore language extensions that make it possible to express &lt;code&gt;Send&lt;/code&gt; bounds without a special trait.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Thanks to Yoshua Wuyts, Nick Cameron, Dan Johnson, Santiago Pastorino, Eric Holk, and Niko Matsakis for reviewing a draft of this post.&lt;/em&gt;&lt;/p&gt;
+&lt;section class&#x3D;&quot;footnotes&quot;&gt;
+&lt;ol&gt;
+&lt;li id&#x3D;&quot;fn1&quot;&gt;
+&lt;p&gt;This feature is called &lt;a href&#x3D;&quot;https://rust-lang.github.io/rfcs/2515-type_alias_impl_trait.html&quot;&gt;&amp;quot;type alias impl trait&amp;quot;&lt;/a&gt;. &lt;a href&#x3D;&quot;#fnref1&quot; class&#x3D;&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id&#x3D;&quot;fn2&quot;&gt;
+&lt;p&gt;The actual error message produced by the compiler is a bit noisier than this, but that will be improved. &lt;a href&#x3D;&quot;#fnref2&quot; class&#x3D;&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id&#x3D;&quot;fn3&quot;&gt;
+&lt;p&gt;Auto traits such as &lt;code&gt;Send&lt;/code&gt; and &lt;code&gt;Sync&lt;/code&gt; are special in this way. The compiler knows that the return type of &lt;code&gt;print_all&lt;/code&gt; is &lt;code&gt;Send&lt;/code&gt; if and only if the type of its argument &lt;code&gt;Send&lt;/code&gt;, and unlike with regular traits, it is allowed to use this knowledge when type checking your program. &lt;a href&#x3D;&quot;#fnref3&quot; class&#x3D;&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id&#x3D;&quot;fn4&quot;&gt;
+&lt;p&gt;See &lt;a href&#x3D;&quot;https://rust-lang.github.io/async-fundamentals-initiative/explainer/async_fn_in_dyn_trait.html&quot;&gt;Async fn in dyn trait&lt;/a&gt; on the initiative website, as well as posts 8 and 9 in &lt;a href&#x3D;&quot;https://smallcultfollowing.com/babysteps/blog/2022/09/21/dyn-async-traits-part-9-callee-site-selection/&quot;&gt;this series&lt;/a&gt;. &lt;a href&#x3D;&quot;#fnref4&quot; class&#x3D;&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id&#x3D;&quot;fn5&quot;&gt;
+&lt;p&gt;When? Possibly sometime in the next six months or so. But don&#x27;t hold me to it :) &lt;a href&#x3D;&quot;#fnref5&quot; class&#x3D;&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+
+        <author>
+            <name>Tyler Mandry</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>1.65.0 pre-release testing</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/10/31/1.65.0-prerelease.html" type="text/html" title="1.65.0 pre-release testing" />
+        <published>2022-10-31T00:00:00+00:00</published>
+        <updated>2022-10-31T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/10/31/1.65.0-prerelease.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/10/31/1.65.0-prerelease.html">&lt;p&gt;The 1.65.0 pre-release is ready for testing. The release is scheduled for
+November 03. &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1650-2022-11-03&quot;&gt;Release notes can be found here.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can try it out locally by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-plain&quot;&gt;RUSTUP_DIST_SERVER&#x3D;https://dev-static.rust-lang.org rustup update stable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The index is &lt;a href&#x3D;&quot;https://dev-static.rust-lang.org/dist/2022-10-31/index.html&quot;&gt;https://dev-static.rust-lang.org/dist/2022-10-31/index.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can leave feedback on the &lt;a href&#x3D;&quot;https://internals.rust-lang.org/t/rust-1-65-0-pre-release-testing/17660&quot;&gt;internals thread&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The release team is also thinking about changes to our pre-release process:
+we&#x27;d love your feedback &lt;a href&#x3D;&quot;https://github.com/rust-lang/release-team/issues/16&quot;&gt;on this GitHub issue&lt;/a&gt;.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Release automation</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Governance Update</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/10/06/governance-update.html" type="text/html" title="Governance Update" />
+        <published>2022-10-06T00:00:00+00:00</published>
+        <updated>2022-10-06T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/10/06/governance-update.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/10/06/governance-update.html">&lt;p&gt;As part of ongoing work on governance, Rust leadership jointly established a group, &amp;quot;leadership chat&amp;quot;, consisting of the Core team, leads of all teams on the &lt;a href&#x3D;&quot;https://www.rust-lang.org/governance&quot;&gt;governance page&lt;/a&gt;, the Moderation team, and the project directors on the Rust Foundation board. This group has been serving as an interim governing body while efforts to establish the next evolution of Rust project-wide governance are underway.&lt;/p&gt;
+&lt;p&gt;We previously posted &lt;a href&#x3D;&quot;https://blog.rust-lang.org/inside-rust/2022/05/19/governance-update.html&quot;&gt;an update on the future of Rust project-wide governance&lt;/a&gt;. In that post, we promised that the next steps would be to &amp;quot;take the findings we have so far and begin crafting proposals for how the Rust project will be governed in the future.&amp;quot; In this post, we&#x27;d like to provide an update on the status of this work.&lt;/p&gt;
+&lt;p&gt;Late in July, the interim leadership team established an informal working group to conduct further research and draft an RFC for the establishment of a new project-wide governing body. This RFC relies on the requirements document&lt;sup class&#x3D;&quot;footnote-ref&quot;&gt;&lt;a href&#x3D;&quot;#fn1&quot; id&#x3D;&quot;fnref1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; that was compiled as a result of in-depth interviews conducted by Ryan Levick and Mara Bos with team members from across the Rust project. Currently, there are seven people involved in this working group: Ryan Levick (Core Project Director), JT (Core), Mark Rousskov (Core Project Director, Release Lead), Jane Losare-Lusby (Collaboration Project Director), Josh Triplett (Lang Team Lead), Josh Gould (Moderation), and Khionu Sybiern (Moderation).&lt;/p&gt;
+&lt;p&gt;The working group&#x27;s objective is not to completely re-engineer every aspect of Rust&#x27;s governance model — that would require the participation and consent of all the other teams working in the project — but rather to lay the foundation for dynamic project-wide governance by introducing policies and procedures for constraining, monitoring, and adjusting the governance model in response to the project&#x27;s evolving needs. As part of this work, not only is explicit attention being paid to the issues that led to the resignation of the &lt;a href&#x3D;&quot;https://blog.rust-lang.org/inside-rust/2021/11/25/in-response-to-the-moderation-team-resignation.html&quot;&gt;former mod team&lt;/a&gt; last November but also additional governance shortfalls identified through Ryan&#x27;s and Mara&#x27;s research. At the same time, we&#x27;re deliberately keeping the scope small in the hope of getting out of the way as soon as possible to let the work continue under the new more representative and accountable governance body.&lt;/p&gt;
+&lt;p&gt;According to our current projections, we are roughly halfway through drafting this RFC since the process began at the end of August. We&#x27;re still making steady progress, and when we have a full draft, we&#x27;ll post it for project-wide review. In the interest of transparency, we will continue to publish updates until the RFC is made available. The goal of keeping the initial discussions private is not to exclude people, but rather to keep the size of the group discussions manageable&lt;sup class&#x3D;&quot;footnote-ref&quot;&gt;&lt;a href&#x3D;&quot;#fn2&quot; id&#x3D;&quot;fnref2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; during the early stages of the RFC drafting process. We are completely open to sharing early drafts and discussing current plans outside of our weekly meetings. Any project participants with questions or concerns are encouraged to get in touch with the working group&#x27;s members.&lt;/p&gt;
+&lt;section class&#x3D;&quot;footnotes&quot;&gt;
+&lt;ol&gt;
+&lt;li id&#x3D;&quot;fn1&quot;&gt;
+&lt;p&gt;Which can be found in the &lt;a href&#x3D;&quot;https://blog.rust-lang.org/inside-rust/2022/05/19/governance-update.html&quot;&gt;previous governance update post&lt;/a&gt; &lt;a href&#x3D;&quot;#fnref1&quot; class&#x3D;&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id&#x3D;&quot;fn2&quot;&gt;
+&lt;p&gt;Even with &amp;quot;only&amp;quot; seven people, having discussions of this magnitude is difficult. &lt;a href&#x3D;&quot;#fnref2&quot; class&#x3D;&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+
+        <author>
+            <name>Ryan Levick</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Announcing the Rust Style Team</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/09/29/announcing-the-rust-style-team.html" type="text/html" title="Announcing the Rust Style Team" />
+        <published>2022-09-29T00:00:00+00:00</published>
+        <updated>2022-09-29T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/09/29/announcing-the-rust-style-team.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/09/29/announcing-the-rust-style-team.html">&lt;p&gt;Rust has a standardized style, and an implementation of that style in the
+&lt;code&gt;rustfmt&lt;/code&gt; tool. The standardized style helps Rust developers feel comfortable
+and at home in many different projects, and the tooling support from &lt;code&gt;rustfmt&lt;/code&gt;
+makes it easy to maintain and to incorporate in continuous integration.
+&lt;code&gt;rustfmt&lt;/code&gt; also provides many options to customize the style, but the style
+guide defines the defaults, and most projects use those defaults.&lt;/p&gt;
+&lt;p&gt;The standard Rust style resulted from development and discussion within the
+Rust style team, between 2016 and 2018. After publishing the style guide, the
+Rust style team concluded its active work, by design.&lt;/p&gt;
+&lt;p&gt;However, as the Rust language develops, we have a regular need for improvements
+to the style guide, such as to support new language constructs. This includes
+minor language changes, as well as highly anticipated new features such as
+&lt;code&gt;let&lt;/code&gt;-chaining (RFC 2497) and &lt;code&gt;let&lt;/code&gt;-&lt;code&gt;else&lt;/code&gt; (RFC 3137). New constructs like
+these, by default, get ignored and not formatted by rustfmt, and subsequently
+need formatting added. Some of this work has fallen to the rustfmt team in
+recent years, but the rustfmt team would prefer to implement style
+determinations made by another team rather than making such determinations
+itself.&lt;/p&gt;
+&lt;p&gt;In addition, rustfmt maintains backwards compatibility guarantees: code that
+has been correctly formatted with rustfmt won&#x27;t get formatted differently with
+a future version of rustfmt. This avoids churn, and avoids creating CI failures
+when people use rustfmt to check style in CI. However, this also prevents
+evolving the Rust style to take community desires into account and improve
+formatting over time. rustfmt provides various configuration options to change
+its default formatting, and many of those options represent changes that many
+people in the community would like enabled by default.&lt;/p&gt;
+&lt;p&gt;For instance, many people prefer to format their &lt;code&gt;use&lt;/code&gt; lines in three blocks:
+imports from the standard library, imports from external crates, and then
+imports from modules within the same project. &lt;code&gt;rustfmt&lt;/code&gt; supports this via the
+option &lt;code&gt;group_imports &#x3D; StdExternalCrate&lt;/code&gt;, but cannot make this the default
+without causing CI failures in existing projects. We need a way to evolve the
+default Rust style compatibly, similar in spirit to the mechanisms we use for
+Rust editions: allowing existing style to continue working, and allowing people
+to opt into new style.&lt;/p&gt;
+&lt;p&gt;To solve both of these problems, &lt;a href&#x3D;&quot;https://rust-lang.github.io/rfcs/3309-style-team.html&quot;&gt;RFC
+3309&lt;/a&gt; has revived the
+Rust style team, with three goals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Making determinations about styling for new Rust constructs&lt;/li&gt;
+&lt;li&gt;Evolving the existing Rust style&lt;/li&gt;
+&lt;li&gt;Defining mechanisms to evolve the Rust style while taking backwards
+compatibility into account&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We don&#x27;t plan to make any earth-shattering style changes; the look and feel of
+Rust will remain largely the same. Evolutions to the default Rust style will
+largely consist of established &lt;code&gt;rustfmt&lt;/code&gt; options people already widely enable,
+or would enable if they were stable.&lt;/p&gt;
+&lt;p&gt;We expect that the initial work of the style team will focus on clearing a
+backlog of new language constructs that lack formatting guidance. Afterwards,
+we will look towards defining and implementing the mechanisms to evolve the
+default Rust style, and then begin introducing style improvements.&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Josh Triplett</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Rust Compiler Early October 2022 Steering Cycle</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/09/23/compiler-team-sep-oct-steering-cycle.html" type="text/html" title="Rust Compiler Early October 2022 Steering Cycle" />
+        <published>2022-09-23T00:00:00+00:00</published>
+        <updated>2022-09-23T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/09/23/compiler-team-sep-oct-steering-cycle.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/09/23/compiler-team-sep-oct-steering-cycle.html">&lt;p&gt;On &lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/238009-t-compiler.2Fmeetings/topic/.5Bplanning.20meeting.5D.202022-09-23/near/300372578&quot;&gt;Friday, September 23rd&lt;/a&gt;, the Rust Compiler team had a planning meeting for the September/October 2022 steering cycle.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#t-compiler-june-steering-schedule&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;t-compiler-june-steering-schedule&quot;&gt;&lt;/a&gt;T-compiler June Steering Schedule&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Meeting Id&lt;/th&gt;
+&lt;th&gt;Meeting Topic&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href&#x3D;&quot;https://calendar.google.com/event?action&#x3D;TEMPLATE&amp;amp;tmeid&#x3D;Mm9tM2VzOWszaWw0Z3RudWlhNzF0ZHMwbzMgNnU1cnJ0Y2U2bHJ0djA3cGZpM2RhbWdqdXNAZw&amp;amp;tmsrc&#x3D;6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com&quot;&gt;2022-09-30&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/559&quot;&gt;compiler-team#559&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2022 Q3 P-high review&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href&#x3D;&quot;https://calendar.google.com/event?action&#x3D;TEMPLATE&amp;amp;tmeid&#x3D;NnA2bWtoaGQ5NnVudGkwdnM5aWZ1YmpqNG0gNnU1cnJ0Y2U2bHJ0djA3cGZpM2RhbWdqdXNAZw&amp;amp;tmsrc&#x3D;6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com&quot;&gt;2022-10-07&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/544&quot;&gt;compiler-team#544&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Survey retrospective&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href&#x3D;&quot;https://calendar.google.com/event?action&#x3D;TEMPLATE&amp;amp;tmeid&#x3D;NW52ZGNhYzVrbWJxdG0yOTBpN2Q2ZmExaXIgNnU1cnJ0Y2U2bHJ0djA3cGZpM2RhbWdqdXNAZw&amp;amp;tmsrc&#x3D;6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com&quot;&gt;2022-10-14&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/540&quot;&gt;compiler-team#540&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Dealing with disabled tests&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href&#x3D;&quot;https://calendar.google.com/event?action&#x3D;TEMPLATE&amp;amp;tmeid&#x3D;MDJyYnJ1cGFtdWR1c2lnNjFmcHJ2b3JlODFfMjAyMjEwMjFUMTQwMDAwWiA2dTVycnRjZTZscnR2MDdwZmkzZGFtZ2p1c0Bn&amp;amp;tmsrc&#x3D;6u5rrtce6lrtv07pfi3damgjus%40group.calendar.google.com&amp;amp;scp&#x3D;ALL&quot;&gt;2022-10-21&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;none&lt;/td&gt;
+&lt;td&gt;(planning for October/November cycle)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#details&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;details&quot;&gt;&lt;/a&gt;Details&lt;/h3&gt;
 &lt;p&gt;Every fourth Friday, the Rust compiler team decides how
 it is going to use its scheduled steering and design meeting time over the next
 three Fridays.&lt;/p&gt;
-&lt;p&gt;On &lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/435&quot;&gt;Friday, 9 July&lt;/a&gt;, we will be having a third follow-up meeting to
-continue the discussion of the incremental compilation fingerprint issue that
-led to the emergency 1.52.1 release. For reference, the first meeting on this
-subject was held on &lt;a href&#x3D;&quot;https://zulip-archive.rust-lang.org/238009tcompilermeetings/56399steeringmeeting20210625152retrocompilerteam435.html&quot;&gt;Friday, 25 June&lt;/a&gt; (and the second was
-today, &lt;a href&#x3D;&quot;https://zulip-archive.rust-lang.org/238009tcompilermeetings/74498steeringmeeting20210702fingerprintsplanning.html&quot;&gt;July 2nd&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;On &lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/444&quot;&gt;Friday, 16 July&lt;/a&gt;, we will be having a meeting to discuss
-extensions to the review policy for Rust Compiler Pull Requests.&lt;/p&gt;
+&lt;p&gt;On Friday, 30 September, we will do a quarterly &lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/559&quot;&gt;review of the open P-high issues&lt;/a&gt;.
+pnkfelix will do some ahead of time work &lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/131828-t-compiler/topic/reviewing.20P-high.20issues.202022.20.28Q3.29/near/300390068&quot;&gt;in zulip&lt;/a&gt;
+triaging
+some of the issues, and potentially prepare a meeting document summarizing the
+remainder, to maximize the quality of our synchronous in-meeting time.&lt;/p&gt;
+&lt;p&gt;On Friday, 7 October, we will do a &lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/544&quot;&gt;retrospective&lt;/a&gt; on the 2022 T-compiler surveys
+that were used to drive the February ambitions post and the midyear update post.
+We will talk about the questions that were asked, what we wish had been asked,
+what value we got from the survey as it went, and what to do the same and/or
+differently in the future. (In principle, this meeting should inform the way
+that we drive the retrospective on how the year as a whole went for the compiler
+team.)&lt;/p&gt;
+&lt;p&gt;On Friday, 14 October, we will discuss how to &lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/540&quot;&gt;deal with &amp;quot;disabled tests&amp;quot;&lt;/a&gt;:
+tests that are turned off at some point (e.g. due to failures in a component we
+do not control). We do not currently have any protocols in place to review such
+tests or decide when to try to re-enabling them.&lt;/p&gt;
+&lt;p&gt;On Friday, 21 October, we will hold our planning meeting for the next steering
+cycle in October and November.&lt;/p&gt;
 &lt;p&gt;Each meeting will run from 2pm to 3pm GMT, and will take place on the
 &lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/238009-t-compiler.2Fmeetings&quot;&gt;T-compiler/meetings zulip stream&lt;/a&gt;.&lt;/p&gt;
 </content>
@@ -40,452 +445,314 @@ extensions to the review policy for Rust Compiler Pull Requests.&lt;/p&gt;
     </entry>
     
     <entry>
-        <title>What the Error Handling Project Group is Working Towards</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/07/01/What-the-error-handling-project-group-is-working-towards.html" type="text/html" title="What the Error Handling Project Group is Working Towards" />
-        <published>2021-07-01T00:00:00+00:00</published>
-        <updated>2021-07-01T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/07/01/What-the-error-handling-project-group-is-working-towards.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/07/01/What-the-error-handling-project-group-is-working-towards.html">&lt;p&gt;This blog post is a follow up of our &lt;a href&#x3D;&quot;https://blog.rust-lang.org/inside-rust/2020/11/23/What-the-error-handling-project-group-is-working-on.html&quot;&gt;previous&lt;/a&gt; post detailing what we&#x27;re working on now. We&#x27;ve been iterating for a while now on some of the challenges that we see with error handling today and have reached the point where we want to describe some of the new changes we&#x27;re working towards. But first we need to describe the main challenges we&#x27;ve identified.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Disclaimer: &lt;em&gt;This post is equal parts plan and aspiration. There are technical challenges here to sort out so the final outcome may look rather different from our initial vision, so please don&#x27;t assume any of this is final.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#error-handling-today&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;error-handling-today&quot;&gt;&lt;/a&gt;Error Handling Today&lt;/h2&gt;
-&lt;p&gt;The first challenge we&#x27;d like to solve is that it&#x27;s easy to lose context accidentally when reporting errors. There are a couple of places this can happen, either when printing an error and forgetting to print sources, when returning an error from main, or when converting a recoverable error into a non recoverable error.&lt;/p&gt;
-&lt;p&gt;Consider this example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;use std::fmt;
-
-// We have a program that loads a config and expects that
-// loading the config will always succeed.
-fn main() {
-    let _config &#x3D; load_config()
-        .expect(&amp;quot;config is always valid and exists&amp;quot;);
-}
-
-// We have a dummy implementation of load_config which
-// always errors, since we&#x27;re just focusing on diagnostics
-// here.
-fn load_config() -&amp;gt; Result&amp;lt;(), Error&amp;gt; {
-    Err(Error(SourceError))
-}
-
-// And we have an error type that just prints &amp;quot;invalid
-// config&amp;quot; and has a source error which just prints &amp;quot;config
-// file does not exist&amp;quot;
-#[derive(Debug)]
-struct Error(SourceError);
-
-impl fmt::Display for Error {
-    fn fmt(&amp;amp;self, f: &amp;amp;mut fmt::Formatter&amp;lt;&#x27;_&amp;gt;) -&amp;gt; fmt::Result {
-        f.write_str(&amp;quot;invalid config&amp;quot;)
-    }
-}
-
-impl std::error::Error for Error {
-    fn source(&amp;amp;self) -&amp;gt; Option&amp;lt;&amp;amp;(dyn std::error::Error + &#x27;static)&amp;gt; {
-        Some(&amp;amp;self.0)
-    }
-}
-
-#[derive(Debug)]
-struct SourceError;
-
-impl fmt::Display for SourceError {
-    fn fmt(&amp;amp;self, f: &amp;amp;mut fmt::Formatter&amp;lt;&#x27;_&amp;gt;) -&amp;gt; fmt::Result {
-        f.write_str(&amp;quot;config file does not exist&amp;quot;)
-    }
-}
-
-impl std::error::Error for SourceError {}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When we run this we would like to see output somewhat like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ cargo run
-thread &#x27;main&#x27; panicked at &#x27;config is always valid and exists&#x27;, src/main.rs:4:33
-
-Error:
-    0: invalid config
-    1: config file does not exist
-
-note: run with &#x60;RUST_BACKTRACE&#x3D;1&#x60; environment variable to display a backtrace
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In this error message we can see that we exited because of a panic. We can see what invariant we violated that was supposed to prevent this panic from happening. We can see the location where the panic was produced. And we can see the error message of each error in the chain of errors accessible via &lt;code&gt;source&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;That&#x27;s what we would like, at least in the version of Rust that the error handling project group wants to see, but what we actually get is this...&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ cargo run
-thread &#x27;main&#x27; panicked at &#x27;config is always valid and exists: Error(SourceError)&#x27;, main.rs:4:33
-note: run with &#x60;RUST_BACKTRACE&#x3D;1&#x60; environment variable to display a backtrace
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now, I definitely don&#x27;t think this is what we want as a default when promoting recoverable errors to non-recoverable errors! &lt;code&gt;unwrap&lt;/code&gt; and &lt;code&gt;expect&lt;/code&gt; work by stringifying the error variant using its &lt;code&gt;Debug&lt;/code&gt; impl, but this is often the wrong operation for types that implement the &lt;code&gt;Error&lt;/code&gt; trait. By converting the &lt;code&gt;Error&lt;/code&gt; to a &lt;code&gt;String&lt;/code&gt; we lose access to the pieces of context we carefully split up via the &lt;code&gt;Error&lt;/code&gt; trait, and in all likelihood the &lt;code&gt;derive(Debug)&lt;/code&gt; output of our error types won&#x27;t even include the error messages in our &lt;code&gt;Display&lt;/code&gt; impls.&lt;/p&gt;
-&lt;p&gt;Rust&#x27;s panic infrastructure doesn&#x27;t provide a method for converting an &lt;code&gt;Error&lt;/code&gt; type into a panic, it only supports converting &lt;code&gt;Debug&lt;/code&gt; types into panics, and we feel that this is a major issue. Similarly, there&#x27;s no convenient tools provided by the language for printing an error and all of its source&#x27;s error messages.&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;fn main() {
-    let result &#x3D; load_config();
-    let _config &#x3D; match result {
-        Ok(config) &#x3D;&amp;gt; config,
-        Err(error) &#x3D;&amp;gt; {
-            println!(&amp;quot;Error: {}&amp;quot;, error);
-            return;
-        }
-    };
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When we run this program we&#x27;d like to see output that looks something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ cargo run
-Error: invalid config: config file does not exist
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Here we can see the header we provided to indicate we&#x27;re printing an error, followed by each error message in the chain of sources separated by colons.&lt;/p&gt;
-&lt;p&gt;But instead all we get is this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ cargo run
-Error: invalid config
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;By default all of the source&#x27;s error messages are lost. This arises from the fact that we used &lt;code&gt;Display&lt;/code&gt; as the interface to an individual error message. If we could go back we&#x27;d currently propose instead adding &lt;code&gt;fn message(&amp;amp;self, f: &amp;amp;mut fmt::Formatter&amp;lt;&#x27;_&amp;gt;) -&amp;gt; fmt::Result&lt;/code&gt; to the &lt;code&gt;Error&lt;/code&gt; trait, but that ship has sailed.&lt;/p&gt;
-&lt;p&gt;The way that libraries work around this today is by abusing the &lt;code&gt;Debug&lt;/code&gt; trait. Types like &lt;a href&#x3D;&quot;https://docs.rs/eyre/0.6.5/eyre/trait.EyreHandler.html#tymethod.debug&quot;&gt;&lt;code&gt;eyre&lt;/code&gt;&lt;/a&gt;, &lt;a href&#x3D;&quot;https://docs.rs/anyhow/1.0.40/src/anyhow/fmt.rs.html#19&quot;&gt;&lt;code&gt;anyhow&lt;/code&gt;&lt;/a&gt;, and even sometimes &lt;a href&#x3D;&quot;https://www.lpalmieri.com/posts/error-handling-rust/#error_chain_fmt&quot;&gt;&lt;code&gt;custom error enums&lt;/code&gt;&lt;/a&gt; use their &lt;code&gt;Debug&lt;/code&gt; output to print the full chain of errors in a human readable report.&lt;/p&gt;
-&lt;p&gt;This has the advantage of making it easy to print a full error report and makes it so &lt;code&gt;unwrap&lt;/code&gt;, &lt;code&gt;expect&lt;/code&gt;, and return from main all print the full error report. But doing so prevents us from accessing the derived &lt;code&gt;Debug&lt;/code&gt; format of our errors, potentially hiding internal details that might be needed for debugging but which aren&#x27;t part of the error messages intended for users to read.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#error-handling-tomorrow&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;error-handling-tomorrow&quot;&gt;&lt;/a&gt;Error Handling Tomorrow&lt;/h2&gt;
-&lt;p&gt;Eventually we&#x27;d like to get to a place where the default tools you reach for when error handling in Rust all do the right thing and fully leverage the &lt;code&gt;Error&lt;/code&gt; trait&#x27;s design. Unwrapping a type that implements the &lt;code&gt;Error&lt;/code&gt; trait will preserve the original error as a &lt;code&gt;dyn Error&lt;/code&gt; which is then available in the panic hook. Printing a full error report will be easy to do and obvious. With these changes in place it will hopefully be quite difficult to accidentally discard information when reporting errors.&lt;/p&gt;
-&lt;p&gt;Our plan to fix these issues is two-fold:&lt;/p&gt;
-&lt;h3&gt;&lt;a href&#x3D;&quot;#1-error-trait--panic-runtime-integration&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;1-error-trait--panic-runtime-integration&quot;&gt;&lt;/a&gt;1. Error Trait + Panic Runtime Integration&lt;/h3&gt;
-&lt;p&gt;First we need to integrate the Error trait and the panic runtime, and the first step to doing so will be moving the &lt;code&gt;Error&lt;/code&gt; trait into &lt;code&gt;core&lt;/code&gt;. This is necessary because the panic runtime is part of &lt;code&gt;core&lt;/code&gt; and the language itself, where as the &lt;code&gt;Error&lt;/code&gt; trait currently resides in &lt;code&gt;std&lt;/code&gt;. We&#x27;re pretty excited about this change which we hope will have other positive downstream effects, particularly in the embedded ecosystem.&lt;/p&gt;
-&lt;p&gt;Once we&#x27;ve gotten to the point where the &lt;code&gt;Error&lt;/code&gt; trait is usable in &lt;code&gt;core&lt;/code&gt; APIs the next step will be to add an interface for creating a panic from an &lt;code&gt;Error&lt;/code&gt; type. We&#x27;re currently planning on adding a &lt;code&gt;panic_error&lt;/code&gt; function, similar to the &lt;code&gt;panic_any&lt;/code&gt; function that is already available in &lt;code&gt;std&lt;/code&gt;. This function will give the panic handler access to errors via a &lt;code&gt;dyn Error&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Once panic handlers are able to process &lt;code&gt;Error&lt;/code&gt; types the next step will be to update the default panic hook provided by &lt;code&gt;std&lt;/code&gt; to actually report panics via the &lt;code&gt;Error&lt;/code&gt; trait if they&#x27;re exposed as such. It should iterate over sources and print the backtrace captured by the error itself if one is available, or possibly capture one itself otherwise.&lt;/p&gt;
-&lt;p&gt;Finally, we need to specialize &lt;code&gt;expect&lt;/code&gt; and &lt;code&gt;unwrap&lt;/code&gt; to use these new &lt;code&gt;Error&lt;/code&gt; aware panic interfaces when unwrapping types that implement the &lt;code&gt;Error&lt;/code&gt; trait. To do this we first need to work around a &lt;a href&#x3D;&quot;https://smallcultfollowing.com/babysteps/blog/2018/02/09/maximally-minimal-specialization-always-applicable-impls/#the-soundness-problem&quot;&gt;soundness issue&lt;/a&gt; with specialization for trait impls that are conditional based on lifetimes, though thankfully we already have a good idea of &lt;a href&#x3D;&quot;https://smallcultfollowing.com/babysteps/blog/2018/02/09/maximally-minimal-specialization-always-applicable-impls&quot;&gt;how to fix this&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;&lt;a href&#x3D;&quot;#2-error-reporter&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;2-error-reporter&quot;&gt;&lt;/a&gt;2. Error Reporter&lt;/h3&gt;
-&lt;p&gt;We would also like to provide a basic error reporter in &lt;code&gt;std&lt;/code&gt;, and some facilities for making it easy to use, or easy to replace with your own preferred error reporter. Printing an error and its sources is a fundamental operation in Rust, so we want the language to provide a pit of success for reporting, where the easiest thing to do is the right thing. We can&#x27;t get there completely because we use &lt;code&gt;Display&lt;/code&gt; for individual error messages, and we can&#x27;t change that in a backwards compatible fashion, but we hope that adding a convenient method for printing a full chain of errors and some clever lints will relieve most of the pressure.&lt;/p&gt;
-&lt;p&gt;We plan on fixing this by first adding a &lt;code&gt;Report&lt;/code&gt; type to the standard library that wraps a &lt;code&gt;&amp;amp;dyn Error&lt;/code&gt; and implements &lt;code&gt;Display&lt;/code&gt; such that it prints each source as desired. We would like the output of &lt;code&gt;Report&lt;/code&gt;&#x27;s display method to support the styles of error concatenation that are most common in the Rust ecosystem.&lt;/p&gt;
-&lt;p&gt;Either one line with each error message concatenated with colons:&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;println!(&amp;quot;Error: {}&amp;quot;, Report::from(error));
-
-// Outputs:
-// Error: outermost error: second error: root error
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Or multiple lines with each error message on its own line :&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;println!(&amp;quot;Error: {:#}&amp;quot;, Report::from(error))
-
-// Outputs:
-// Error: outermost error
-//
-// Caused by:
-//    0: second error
-//    1: root error
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The first single line format is useful for log output or inlined error messages, whereas the alternate multi line format is useful for user facing output such as a CLI interface or a GUI popup.&lt;/p&gt;
-&lt;p&gt;We also want to add a method to the error trait for conveniently wrapping up any error in the &lt;code&gt;Report&lt;/code&gt; type so that reporting an error is as simple as &lt;code&gt;println!(&amp;quot;Error: {}&amp;quot;, error.report());&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;We expect the report method will look something like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;fn report(&amp;amp;self) -&amp;gt; impl Display + &#x27;_
-where
-    Self: Sized,
-{
-    Report::from(self)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We want the return type here to be generic rather than hard coded to &lt;code&gt;Report&lt;/code&gt; so that individual error types can provide their own report format if desired. We expect that derive macros may leverage this to customize error reporting format defaults. This will work well with composition because the reporter from the outermost type will be used to format the full chain of errors.&lt;/p&gt;
-&lt;p&gt;For now we can&#x27;t implement this method as described because &lt;code&gt;impl Trait&lt;/code&gt; isn&#x27;t allowed in return types on trait methods, but we&#x27;re working to find a way to add this to the error trait backwards compatibly.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#duplicate-information-issue&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;duplicate-information-issue&quot;&gt;&lt;/a&gt;Duplicate Information Issue&lt;/h2&gt;
-&lt;p&gt;With these fixes in place it will become easy to chain errors and report them completely and consistently. However there is a hazard that &lt;code&gt;Error&lt;/code&gt; implementors need to be aware of in this system: duplicate information.&lt;/p&gt;
-&lt;p&gt;Imagine an error like the one in the previous example, except instead of each error printing its own message and returning the next error via &lt;code&gt;source&lt;/code&gt;, they also include their source&#x27;s error message after their own. That way when we print the outer error&#x27;s &lt;code&gt;Display&lt;/code&gt; output we see all of the error messages, not just the first in the chain.&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;println!(&amp;quot;Error: {}&amp;quot;, error);
-
-// Outputs:
-// Error: outermost error: second error: root error
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now, what happens we then print this same error type with &lt;code&gt;Report&lt;/code&gt; expecting that we need to iterate over the sources and print them too?&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;println!(&amp;quot;Error: {:#}&amp;quot;, error.report());
-
-// Outputs
-// Error: outermost error: second error: root error
-//
-// Caused by:
-//    0: second error: root error
-//    1: root error
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The source error messages get duplicated! With the multi-line output of &lt;code&gt;anyhow&lt;/code&gt; and &lt;code&gt;eyre&lt;/code&gt; we get this nice little triangle shape to the error report, which you&#x27;ve probably encountered if you&#x27;ve ever used these libraries before. We can no longer separate the error messages of the individual errors in the chain of errors because this error type concatenates the sources manually and returns them via the &lt;code&gt;source&lt;/code&gt; function. This also restricts how we can format our error reports. If we want a consistent report format and we have a dependency that concatenates errors in a single line we are forced to do so as well ourselves throughout our entire application. If, on the other hand, we have two dependencies that concatenate errors in different ways, well, we&#x27;re out of luck.&lt;/p&gt;
-&lt;p&gt;So how do we avoid this? We adopt a consistent separation for &lt;code&gt;Display&lt;/code&gt; and &lt;code&gt;source&lt;/code&gt; implementations.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#guidelines-for-implementing-displayfmt-and-errorsource&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;guidelines-for-implementing-displayfmt-and-errorsource&quot;&gt;&lt;/a&gt;Guidelines for implementing &lt;code&gt;Display::fmt&lt;/code&gt; and &lt;code&gt;Error::source&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;To resolve this issue, project error handling recently created a guideline for &lt;a href&#x3D;&quot;https://github.com/rust-lang/project-error-handling/issues/27#issuecomment-763950178&quot;&gt;how to implement &lt;code&gt;Display::fmt&lt;/code&gt; and &lt;code&gt;Error::source&lt;/code&gt;&lt;/a&gt;. In it we make the following recommendation:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;An error type with a source error should either return that error via &lt;code&gt;source&lt;/code&gt; or include that source&#x27;s error message in its own &lt;code&gt;Display&lt;/code&gt; output, but never both.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;We figure the default will be to return errors via source. That way source errors can be reacted to via &lt;code&gt;downcast&lt;/code&gt; when appropriate. This is particularly important for libraries that are changing existing public error types. For these libraries removing an error from &lt;code&gt;source&lt;/code&gt; is a breaking change that isn&#x27;t detected at compile time, making a major version bump likely insufficient. Changing the &lt;code&gt;Display&lt;/code&gt; output is also a breaking change, though a less dangerous one. To help with this we&#x27;ve drafted a suggested migration plan: &lt;a href&#x3D;&quot;https://github.com/rust-lang/project-error-handling/issues/44&quot;&gt;rust-lang/project-error-handling#44&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;In coming up with this recommendation we had to figure out what the &lt;code&gt;Error&lt;/code&gt; trait&#x27;s primary role is in Rust. After discussing it with the library team we concluded that reporting should be treated as the primary role, and that reacting via &lt;code&gt;downcast&lt;/code&gt; should come second when designing error types. Generally these needs are not in conflict, but it is possible for issues to come up. For example, when working with transparent error types that forward all methods to an inner error type. When these types follow this guideline the inner error type is skipped over and is never made available for &lt;code&gt;downcast&lt;/code&gt;ing.&lt;/p&gt;
-&lt;p&gt;This recommendation only applies for error types that are exposed as part of library APIs. Internal errors in libraries or and applications can do whatever they want, but as soon as they need to be integrated into other crates by 3rd party users it&#x27;s important that errors follow a consistent style. If you&#x27;re interested in our rationale or have any comments please check out our github issue on the topic: &lt;a href&#x3D;&quot;https://github.com/rust-lang/project-error-handling/issues/27&quot;&gt;rust-lang/project-error-handling#27&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#conclusion&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;We hope that these changes will significantly improve error handling experience provided by Rust. Error reporting will be more consistent and flexible and let the final application developer define how to format error reports for their specific use-case. It will be a lot harder to accidentally lose information when reporting errors. The tools for reporting errors will be more tightly integrated into the standard library and the language itself and we hope this will have extra benefits to the embedded ecosystem by more universally standardizing on the &lt;code&gt;Error&lt;/code&gt; trait.&lt;/p&gt;
-&lt;p&gt;So that&#x27;s the plan for now, it&#x27;s not the full plan of all the changes we&#x27;d like to make, but we think its the best first step. However, this is by no means set in stone and we&#x27;re interested in getting feedback from the rest of the community so we can refine our design. So if you have thoughts please let us know, our project group repo is https://github.com/rust-lang/project-error-handling. Please feel free to &lt;a href&#x3D;&quot;https://github.com/rust-lang/project-error-handling/issues&quot;&gt;open an issue&lt;/a&gt; or hop in our &lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/257204-project-error-handling&quot;&gt;zulip stream&lt;/a&gt; and create a new topic to let us know what you think of this plan.&lt;/p&gt;
-</content>
-
-        <author>
-            <name>Jane Lusby</name>
-        </author>
-    </entry>
-    
-    <entry>
-        <title>Rust Compiler June Steering Cycle</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/06/23/compiler-team-june-steering-cycle.html" type="text/html" title="Rust Compiler June Steering Cycle" />
-        <published>2021-06-23T00:00:00+00:00</published>
-        <updated>2021-06-23T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/06/23/compiler-team-june-steering-cycle.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/06/23/compiler-team-june-steering-cycle.html">&lt;p&gt;On &lt;a href&#x3D;&quot;https://zulip-archive.rust-lang.org/238009tcompilermeetings/93506planningmeeting20210604.html&quot;&gt;Friday, June 4th&lt;/a&gt;, the Rust Compiler team had a planning meeting for the June steering cycle.&lt;/p&gt;
-&lt;p&gt;Every fourth Friday, the Rust compiler team decides how
-it is going to use its scheduled steering and design meeting time over the next
-three Fridays.&lt;/p&gt;
-&lt;p&gt;On &lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/435&quot;&gt;Friday, 25 June&lt;/a&gt;, we will be having a meeting to review a
-document discussing the incremental compilation fingerprint issue that led to
-the emergency 1.52.1 release, and the steps the project is taking to prevent
-future occurrences of similar scenarios. (This date is a change in schedule from
-its original date that had been discussed in the planning meeting.)&lt;/p&gt;
-&lt;p&gt;The meeting will run from 2pm to 3pm GMT, and will take place on the
-&lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/238009-t-compiler.2Fmeetings&quot;&gt;T-compiler/meetings zulip stream&lt;/a&gt;.&lt;/p&gt;
-</content>
-
-        <author>
-            <name>Felix Klock</name>
-        </author>
-    </entry>
-    
-    <entry>
-        <title>Please welcome Boxy, Léo Lanteri Thauvin and the8472 to compiler-contributors</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/06/15/boxyuwu-leseulartichaut-the8472-compiler-contributors.html" type="text/html" title="Please welcome Boxy, Léo Lanteri Thauvin and the8472 to compiler-contributors" />
-        <published>2021-06-15T00:00:00+00:00</published>
-        <updated>2021-06-15T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/06/15/boxyuwu-leseulartichaut-the8472-compiler-contributors.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/06/15/boxyuwu-leseulartichaut-the8472-compiler-contributors.html">&lt;p&gt;Please welcome &lt;a href&#x3D;&quot;https://github.com/BoxyUwU&quot;&gt;Boxy&lt;/a&gt;, &lt;a href&#x3D;&quot;https://github.com/LeSeulArtichaut&quot;&gt;Léo Lanteri Thauvin&lt;/a&gt; and &lt;a href&#x3D;&quot;https://github.com/the8472&quot;&gt;the8472&lt;/a&gt; to the &lt;a href&#x3D;&quot;https://rust-lang.github.io/rfcs/2689-compiler-team-contributors.html&quot;&gt;compiler-contributors&lt;/a&gt; group!&lt;/p&gt;
-&lt;p&gt;&lt;a href&#x3D;&quot;https://github.com/BoxyUwU&quot;&gt;Boxy&lt;/a&gt; has been working on pushing const generics forward by &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/81577&quot;&gt;implementing parts&lt;/a&gt; of the &lt;code&gt;const_evaluatable_checked&lt;/code&gt; feature, &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/82067&quot;&gt;fixing bugs&lt;/a&gt; and &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/85957&quot;&gt;making rustdoc work with const generics&lt;/a&gt;.
-Boxy is also a frequent contributor to &lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/260443-project-const-generics&quot;&gt;#project-const-generics&lt;/a&gt; discussions and meetings.&lt;/p&gt;
-&lt;p&gt;&lt;a href&#x3D;&quot;https://github.com/LeSeulArtichaut&quot;&gt;Léo Lanteri Thauvin&lt;/a&gt; has been a consistent contributor of &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/78182&quot;&gt;refactorings and improvements&lt;/a&gt; to rustc.
-Recently, Léo has been &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/83129&quot;&gt;implementing&lt;/a&gt; a &lt;a href&#x3D;&quot;https://github.com/rust-lang/compiler-team/issues/402&quot;&gt;Major Change Proposal&lt;/a&gt; to migrate the &lt;code&gt;unsafe&lt;/code&gt; checker to operate on THIR instead of MIR.&lt;/p&gt;
-&lt;p&gt;&lt;a href&#x3D;&quot;https://github.com/the8472&quot;&gt;the8472&lt;/a&gt; has been a frequent contributor of performance improvements to both the &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/84965&quot;&gt;compiler itself&lt;/a&gt; as well as the &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/83245&quot;&gt;standard library&lt;/a&gt;.
-&lt;a href&#x3D;&quot;https://github.com/the8472&quot;&gt;the8472&lt;/a&gt; can also be frequently found on Zulip offering advice and help.&lt;/p&gt;
-&lt;p&gt;Congratulations &lt;a href&#x3D;&quot;https://github.com/BoxyUwU&quot;&gt;Boxy&lt;/a&gt;, &lt;a href&#x3D;&quot;https://github.com/LeSeulArtichaut&quot;&gt;Léo Lanteri Thauvin&lt;/a&gt; and &lt;a href&#x3D;&quot;https://github.com/the8472&quot;&gt;the8472&lt;/a&gt; and thanks!&lt;/p&gt;
-</content>
-
-        <author>
-            <name>Wesley Wiser</name>
-        </author>
-    </entry>
-    
-    <entry>
-        <title>1.53.0 pre-release testing</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/06/15/1.53.0-prelease.html" type="text/html" title="1.53.0 pre-release testing" />
-        <published>2021-06-15T00:00:00+00:00</published>
-        <updated>2021-06-15T00:00:01+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/06/15/1.53.0-prelease.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/06/15/1.53.0-prelease.html">&lt;p&gt;The 1.53.0 pre-release is ready for testing. The release is scheduled for this
-Thursday, June 17th. &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/blob/master/RELEASES.md#version-1530-2021-06-17&quot;&gt;Release notes can be found here.&lt;/a&gt;&lt;/p&gt;
+        <title>1.64.0 pre-release testing</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/09/19/1.64.0-prerelease.html" type="text/html" title="1.64.0 pre-release testing" />
+        <published>2022-09-19T00:00:00+00:00</published>
+        <updated>2022-09-19T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/09/19/1.64.0-prerelease.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/09/19/1.64.0-prerelease.html">&lt;p&gt;The 1.64.0 pre-release is ready for testing. The release is scheduled for
+September 22. &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1640-2022-09-22&quot;&gt;Release notes can be found here.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can try it out locally by running:&lt;/p&gt;
 &lt;pre&gt;&lt;code class&#x3D;&quot;language-plain&quot;&gt;RUSTUP_DIST_SERVER&#x3D;https://dev-static.rust-lang.org rustup update stable
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The index is &lt;a href&#x3D;&quot;https://dev-static.rust-lang.org/dist/2021-06-15/index.html&quot;&gt;https://dev-static.rust-lang.org/dist/2021-06-15/index.html&lt;/a&gt;. You
-can leave feedback on the &lt;a href&#x3D;&quot;https://internals.rust-lang.org/t/1-53-0-prerelease-testing/14884&quot;&gt;internals thread&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The index is &lt;a href&#x3D;&quot;https://dev-static.rust-lang.org/dist/2022-09-19/index.html&quot;&gt;https://dev-static.rust-lang.org/dist/2022-09-19/index.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can leave feedback on the &lt;a href&#x3D;&quot;https://internals.rust-lang.org/t/rust-1-64-0-pre-release-testing/17409&quot;&gt;internals thread&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The release team is also thinking about changes to our pre-release process:
+we&#x27;d love your feedback &lt;a href&#x3D;&quot;https://github.com/rust-lang/release-team/issues/16&quot;&gt;on this GitHub issue&lt;/a&gt;.&lt;/p&gt;
 </content>
 
         <author>
-            <name>Mark Rousskov</name>
+            <name>Release automation</name>
         </author>
     </entry>
     
     <entry>
-        <title>Core Team Update: May 2021</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/05/04/core-team-update.html" type="text/html" title="Core Team Update: May 2021" />
-        <published>2021-05-04T00:00:00+00:00</published>
-        <updated>2021-05-04T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/05/04/core-team-update.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/05/04/core-team-update.html">&lt;p&gt;Hey everyone!  Back in August of last year, the core team wrote a blog post
-titled &amp;quot;&lt;a href&#x3D;&quot;https://blog.rust-lang.org/2020/08/18/laying-the-foundation-for-rusts-future.html&quot;&gt;Laying the foundation for Rust&#x27;s Future&lt;/a&gt;.&amp;quot; Ever since then,
-the Core Team has been doing a tremendous amount of work to help get the
-foundation going, and prepare the project for the changes that have now
-occurred because of these events.&lt;/p&gt;
-&lt;p&gt;But that also means we&#x27;ve been very quiet!  This sort of work has largely
-been focused inward, and not really something that&#x27;s visible from the
-outside, even if you are on a Rust team.  However, thanks to these efforts,
-the Foundation now exists, and is starting to work on its mission.  That also
-means it&#x27;s time for the core team to shift the focus of its work.&lt;/p&gt;
-&lt;p&gt;Beyond the Foundation efforts, we&#x27;ve also had several initiatives underway
-that you may or may not know about:&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#the-2021-roadmap&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;the-2021-roadmap&quot;&gt;&lt;/a&gt;The 2021 Roadmap&lt;/h2&gt;
-&lt;p&gt;The &lt;a href&#x3D;&quot;https://github.com/rust-lang/rfcs/pull/3037&quot;&gt;2021 Roadmap&lt;/a&gt; RFC was merged back in January.  This set the goals for
-the core team for this year.  This is a bit different from previous years,
-where we laid out goals for the entire project.  We decided this year to
-focus on Core, and give the teams the leeway to set their own goals, while we
-focused on overall organizational health.&lt;/p&gt;
-&lt;p&gt;Later in the year, we&#x27;ll be starting the process for next year as well. We&#x27;re
-not actively thinking about this yet, but ideally, a yearly roadmap would be
-merged in December, rather than in January, so we want to make sure and begin
-early enough to get this shipped on time for 2022.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#team-charters&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;team-charters&quot;&gt;&lt;/a&gt;Team Charters&lt;/h2&gt;
-&lt;p&gt;As part of that work, we&#x27;ve begun the first steps of a process to give each
-team a formal charter.  Way back in &lt;a href&#x3D;&quot;https://github.com/rust-lang/rfcs/blob/master/text/1068-rust-governance.md&quot;&gt;RFC 1068&lt;/a&gt;, the scope of the initial
-teams was laid out.  While that has served us well over the years, as teams
-were spun up, shut down, and changed, we haven&#x27;t always done a good job of
-making it clear where the boundaries of responsibility lie in each team.
-Part of the magic in Rust&#x27;s governance structure is that individual teams are
-given significant authority to do as they see fit, but that also means that
-we have to be concious about scope. We&#x27;ll have more to report on this process
-as it continues to unfold, but the end goal is stated in the roadmap:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The Rust teams, in concert with the core team, will work to establish a
-charter for each of the Rust teams over the course of the year, with an aim
-for defining, particularly, the purpose and membership requirements.  Our
-goal is that going into 2022, all active groups within the Rust project will
-have well-defined charters and membership.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Now is the time to redouble efforts here, and we are excited to work with all
-of the teams on nailing these charters down. As a start, we&#x27;ve been working with
-the Libs, Release, and Cargo teams for an initial pass at their charters. We&#x27;ve
-structured this to be largely team-driven; we&#x27;re setting expectations and framing
-what charters should look like, but the teams work on what goes in them. As this
-progresses, we hope to learn more about the challenges involved so that we can
-improve our process and bring in more teams.&lt;/p&gt;
-&lt;p&gt;It&#x27;s worth pointing out explicitly that this work also includes the Core Team; we&#x27;ll
-be creating a charter for ourselves as well.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#audit-of-packages-owned-by-the-project&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;audit-of-packages-owned-by-the-project&quot;&gt;&lt;/a&gt;Audit of packages owned by the project&lt;/h2&gt;
-&lt;p&gt;As another example of something the core team has been working on, we&#x27;ve been
-doing work to clarify the status of a number of packages owned by the Rust team
-on crates.io. We are conducting a full audit of these packages, making sure that
-they&#x27;re things that should be owned by the project, making sure that they have
-appropriate permissions, making sure that they have people taking care of them,
-all of that kind of thing. Historically, we&#x27;ve been fairly ad-hoc about this sort
-of thing, but as we grow, it is very imporant to be deliberate. An
-&lt;a href&#x3D;&quot;https://github.com/rust-lang/rfcs/pull/3119&quot;&gt;RFC&lt;/a&gt; was just opened to create a policy here.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#thanks&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;thanks&quot;&gt;&lt;/a&gt;Thanks!&lt;/h2&gt;
-&lt;p&gt;So that&#x27;s a quick summary of what we&#x27;ve been up to, and some of what we&#x27;ll be
-doing in the immediate future. We plan on trying to communicate what Core is working
-on more often in the future; 2020 was an extremely complex year for a variety of
-reasons, but we&#x27;re feeling really positive about the future of Core and the
-Rust project generally. Thank you to the teams for all you&#x27;ve done for Rust.&lt;/p&gt;
-</content>
-
-        <author>
-            <name>Steve Klabnik</name>
-        </author>
-    </entry>
-    
-    <entry>
-        <title>1.52.0 pre-release testing</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/05/04/1.52.0-prerelease.html" type="text/html" title="1.52.0 pre-release testing" />
-        <published>2021-05-04T00:00:00+00:00</published>
-        <updated>2021-05-04T00:00:01+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/05/04/1.52.0-prerelease.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/05/04/1.52.0-prerelease.html">&lt;p&gt;The 1.52.0 pre-release is ready for testing. The release is scheduled for this
-Thursday, May 6th. &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1520-2021-05-06&quot;&gt;Release notes can be found here.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;You can try it out locally by running:&lt;/p&gt;
-&lt;pre&gt;&lt;code class&#x3D;&quot;language-plain&quot;&gt;RUSTUP_DIST_SERVER&#x3D;https://dev-static.rust-lang.org rustup update stable
+        <title>Contribute to the diagnostic translation effort!</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/08/16/diagnostic-effort.html" type="text/html" title="Contribute to the diagnostic translation effort!" />
+        <published>2022-08-16T00:00:00+00:00</published>
+        <updated>2022-08-16T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/08/16/diagnostic-effort.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/08/16/diagnostic-effort.html">&lt;p&gt;The Rust Diagnostics working group is leading an effort to add support for
+internationalization of error messages in the compiler, allowing the compiler
+to produce output in languages other than English.&lt;/p&gt;
+&lt;p&gt;For example, consider the following diagnostic where a user has used a colon to
+specify a function&#x27;s return type instead of an arrow:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-text&quot;&gt;error: return types are denoted using &#x60;-&amp;gt;&#x60;
+ --&amp;gt; src/main.rs:1:21
+  |
+1 | fn meaning_of_life(): u32 { 42 }
+  |                     ^ help: use &#x60;-&amp;gt;&#x60; instead
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The index is &lt;a href&#x3D;&quot;https://dev-static.rust-lang.org/dist/2021-05-04/index.html&quot;&gt;https://dev-static.rust-lang.org/dist/2021-05-04/index.html&lt;/a&gt;. You
-can leave feedback on the &lt;a href&#x3D;&quot;https://internals.rust-lang.org/t/1-52-0-prerelease-testing&quot;&gt;internals thread&lt;/a&gt;.&lt;/p&gt;
-</content>
-
-        <author>
-            <name>Pietro Albini</name>
-        </author>
-    </entry>
-    
-    <entry>
-        <title>Rustup 1.24.0 release incident report for 2021-04-27</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/04/28/rustup-1.24.0-incident-report.html" type="text/html" title="Rustup 1.24.0 release incident report for 2021-04-27" />
-        <published>2021-04-28T00:00:00+00:00</published>
-        <updated>2021-04-28T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/04/28/rustup-1.24.0-incident-report.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/04/28/rustup-1.24.0-incident-report.html">&lt;p&gt;On 2021-04-27 at 15:09 UTC we released a new version of Rustup (1.24.0). At
-15:23 UTC we received a report that we had introduced a regression in the part
-of the code which is responsible for proxying the &lt;code&gt;rustfmt&lt;/code&gt; and &lt;code&gt;cargo-fmt&lt;/code&gt;
-portions of Rust toolchains. At 15:27 UTC we had confirmed and identified the
-cause of the problem, and while we worked on a fix, we reverted the released
-Rustup to version 1.23.1 - an action completed by 15:56 UTC.&lt;/p&gt;
-&lt;p&gt;This means that for approximately 47 minutes, CI jobs which used the code
-formatting features of Rust toolchains may have had spurious failures, and users
-who upgraded will have had to revert to 1.23.1. The revert process is designed
-to be as easy as upgrading was, meaning that users should not have had lingering
-issues.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#root-cause-of-the-issue&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;root-cause-of-the-issue&quot;&gt;&lt;/a&gt;Root cause of the issue&lt;/h2&gt;
-&lt;p&gt;In an effort to
-&lt;a href&#x3D;&quot;https://github.com/rust-lang/rustup/issues/2286&quot;&gt;reduce confusion when downloaded copies of &lt;code&gt;rustup-init.exe&lt;/code&gt;are renamed&lt;/a&gt;
-we merged a change which causes Rustup to report an error if an unknown name is
-used when invoking the binary.&lt;/p&gt;
-&lt;p&gt;Due to past complexities with &lt;code&gt;rustfmt&lt;/code&gt; and &lt;code&gt;cargo-fmt&lt;/code&gt; being binaries which
-tended to be distributed by &lt;code&gt;cargo install&lt;/code&gt; rather than via
-&lt;code&gt;rustup component add&lt;/code&gt; there is some intricate handling in Rustup&#x27;s proxy
-management for those specific binaries. The fix for the above issue failed to
-include these corner case proxies in the check it undertook to ensure the caller
-hadn&#x27;t used an unexpected binary name.&lt;/p&gt;
-&lt;p&gt;The 1.24.0 release had been staged at this point, however there was a problem
-with the low-memory installation pathways which required a fix, and at the time
-we incorrectly assessed that it was low-impact to rebase the release onto the
-new master branch which had not only the fix for the low-memory installation
-pathway but also the &amp;quot;refuse bad names&amp;quot; change for the above issue.&lt;/p&gt;
-&lt;p&gt;Subsequent testing of the release focussed almost entirely on the installation
-pathways, omitting to validate the proxy name verification code we had also
-acquired into the release. As a result, this regression slipped in.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#resolution&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;resolution&quot;&gt;&lt;/a&gt;Resolution&lt;/h2&gt;
-&lt;p&gt;The author of the validation PR correctly identified it as the root-cause of
-the regression, and the team discussed and decided that it was better to fix
-the problem properly than to simply revert the change out of the release.&lt;/p&gt;
-&lt;p&gt;The release team member who was helping with the release process began the
-revert to Rustup 1.23.1 while the fixes were developed. In addition an issue
-was filed around adding some tests around all the proxies (we currently test a
-subset which we believed to be representative). We subsequently staged a
-proposed 1.24.1 release to Rust&#x27;s development stage and we have issued a &lt;a href&#x3D;&quot;https://internals.rust-lang.org/t/seeking-beta-testers-for-rustup-1-24-1/14582&quot;&gt;call
-for beta testers&lt;/a&gt; to confirm that we have not introduced any other
-regressions.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#lessons-learned&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;lessons-learned&quot;&gt;&lt;/a&gt;Lessons learned&lt;/h2&gt;
-&lt;p&gt;The big lesson here is that while we&#x27;ve taken similar notes away from past
-releases of Rustup and other tooling, we&#x27;ve not yet managed to set up a proper
-beta-testing process for Rustup. As such we will be making changes to the
-Rustup release process to codify testing phases with the wider community.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#long-term-changes-to-rustup-releases&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;long-term-changes-to-rustup-releases&quot;&gt;&lt;/a&gt;Long term changes to Rustup releases&lt;/h2&gt;
-&lt;p&gt;In order to try and reduce the chance of this happening again, the &lt;a href&#x3D;&quot;https://github.com/rust-lang/rustup/blob/master/CONTRIBUTING.md#making-a-release&quot;&gt;release
-process&lt;/a&gt; will be updated to include a public beta-testing phase for any non-
-purely-bugfix release and we intend to look into the possibility of a &amp;quot;nightly&amp;quot;
-Rustup release for a &lt;em&gt;small&lt;/em&gt; subset of platforms.&lt;/p&gt;
-&lt;p&gt;Finally we are hoping to work with the &lt;a href&#x3D;&quot;https://www.rust-lang.org/governance/teams/release&quot;&gt;release team&lt;/a&gt; to do what we can to
-unify the Rustup release process with the well oiled Rust release process
-though, due to the historical differences in how Rustup has been released, this
-will likely be a long term effort.&lt;/p&gt;
-&lt;h2&gt;&lt;a href&#x3D;&quot;#action-items&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;action-items&quot;&gt;&lt;/a&gt;Action items&lt;/h2&gt;
+&lt;p&gt;We could output that diagnostic in Chinese:&lt;/p&gt;
+&lt;pre lang&#x3D;&quot;zh-CN&quot;&gt;
+&lt;code class&#x3D;&quot;language-text&quot;&gt;错误: 返回类型使用&#x60;-&gt;&#x60;表示
+ --&gt; src/main.rs:1:21
+  |
+1 | fn meaning_of_life(): u32 { 42 }
+  |                     ^ 帮助: 使用&#x60;-&gt;&#x60;来代替
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or even in Spanish:&lt;/p&gt;
+&lt;pre lang&#x3D;&quot;es&quot;&gt;
+&lt;code class&#x3D;&quot;language-text&quot;&gt;error: el tipo de retorno se debe indicar mediante &#x60;-&gt;&#x60;
+ --&gt; src/main.rs:1:21
+  |
+1 | fn meaning_of_life(): u32 { 42 }
+  |                     ^ ayuda: utilice &#x60;-&gt;&#x60; en su lugar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Translated error messages will allow non-native speakers of English to use Rust
+in their preferred language.&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#whats-the-current-status&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;whats-the-current-status&quot;&gt;&lt;/a&gt;What&#x27;s the current status?&lt;/h2&gt;
+&lt;p&gt;Implementation on diagnostic translation has started, but we&#x27;re looking for
+help!&lt;/p&gt;
+&lt;p&gt;The core infrastructure for diagnostic translation has been implemented in
+&lt;code&gt;rustc&lt;/code&gt;; this makes it possible for Rust to emit a diagnostic with translated
+messages. However, every diagnostic in &lt;code&gt;rustc&lt;/code&gt; has to be ported to use this new
+infrastructure, otherwise they can&#x27;t be translated. That&#x27;s a lot of work, so
+the diagnostics working group has chosen to combine the translation effort with
+a transition to &amp;quot;diagnostic structs&amp;quot; (more on that later) and get both done at
+once.&lt;/p&gt;
+&lt;p&gt;Once most diagnostic messages have been ported to the new infrastructure, then
+the diagnostics working group will start creating a workflow for translation
+teams to translate all of the diagnostic messages to different languages.&lt;/p&gt;
+&lt;p&gt;Every pull request related to diagnostic translation is tagged with
+&lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues?q&#x3D;is%3Aopen+label%3AA-translation+sort%3Aupdated-desc&quot;&gt;&lt;code&gt;A-translation&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#getting-involved&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;getting-involved&quot;&gt;&lt;/a&gt;Getting involved&lt;/h2&gt;
+&lt;p&gt;There&#x27;s a lot of work to do on diagnostic translation, but the good news is that
+lots of the work can be done in parallel, and it doesn&#x27;t require background in
+compiler development or familiarity with &lt;code&gt;rustc&lt;/code&gt; to contribute!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you are interested in getting involved, take a look at &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues/100717&quot;&gt;#100717&lt;/a&gt; to find
+out where to get started!&lt;/strong&gt; You can ask for help in
+&lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/147480-t-compiler.2Fwg-diagnostics&quot;&gt;&lt;code&gt;#t-compiler/wg-diagnostics&lt;/code&gt;&lt;/a&gt; or reach out to &lt;a href&#x3D;&quot;https://github.com/davidtwco&quot;&gt;&lt;code&gt;@davidtwco&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This post isn&#x27;t going to be updated as the working group iterates on
+and improves the workflow for diagnostic translation, so always consult the
+developer guide for the most recent documentation on &lt;a href&#x3D;&quot;https://rustc-dev-guide.rust-lang.org/diagnostics/diagnostic-structs.html&quot;&gt;diagnostic
+structs&lt;/a&gt; or &lt;a href&#x3D;&quot;https://rustc-dev-guide.rust-lang.org/diagnostics/translation.html&quot;&gt;diagnostic translation&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#1-setting-up-a-local-development-environment&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;1-setting-up-a-local-development-environment&quot;&gt;&lt;/a&gt;1. Setting up a local development environment&lt;/h3&gt;
+&lt;p&gt;Before helping with the diagnostic translation effort, you&#x27;ll need to get your
+development environment set up, so &lt;a href&#x3D;&quot;https://rustc-dev-guide.rust-lang.org/building/how-to-build-and-run.html&quot;&gt;follow the instructions on the &lt;code&gt;rustc&lt;/code&gt; dev
+guide&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#2-getting-ready-to-port-your-first-diagnostic&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;2-getting-ready-to-port-your-first-diagnostic&quot;&gt;&lt;/a&gt;2. Getting ready to port your first diagnostic&lt;/h3&gt;
+&lt;p&gt;Almost all diagnostics in &lt;code&gt;rustc&lt;/code&gt; are implemented using the traditional
+&lt;code&gt;DiagnosticBuilder&lt;/code&gt; APIs, which look something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;self.struct_span_err(self.prev_token.span, &amp;quot;return types are denoted using &#x60;-&amp;gt;&#x60;&amp;quot;)
+    .span_suggestion_short(
+        self.prev_token.span,
+        &amp;quot;use &#x60;-&amp;gt;&#x60; instead&amp;quot;,
+        &amp;quot;-&amp;gt;&amp;quot;.to_string(),
+        Applicability::MachineApplicable,
+    )
+    .emit();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;struct_span_err&lt;/code&gt; creates a new diagnostic given two things - a &lt;code&gt;Span&lt;/code&gt; and a
+message. &lt;code&gt;struct_span_err&lt;/code&gt; isn&#x27;t the only diagnostic function that you&#x27;ll
+encounter in the compiler&#x27;s source, but the others are all pretty similar. You
+can read more about &lt;code&gt;rustc&lt;/code&gt;&#x27;s diagnostic infrastructure &lt;a href&#x3D;&quot;https://rustc-dev-guide.rust-lang.org/diagnostics.html#error-messages&quot;&gt;in the &lt;code&gt;rustc&lt;/code&gt; dev
+guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Span&lt;/code&gt;s just identify some location in the user&#x27;s source code and you can find
+them used throughout the compiler for diagnostic reporting (for example, the
+location &lt;code&gt;main.rs:1:21&lt;/code&gt; from the earlier example would have been
+&lt;code&gt;self.prev_token.span&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;In this example, the message is just a string literal (a &lt;code&gt;&amp;amp;&#x27;static str&lt;/code&gt;) which
+needs to be replaced by an identifier for the same message in whichever
+language was requested.&lt;/p&gt;
+&lt;p&gt;There are two ways that a diagnostic will be ported to the new infrastructure:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If it&#x27;s a simple diagnostic, without any logic to decide whether or not to
+add suggestions or notes or helps or labels, like in the example above,
+then...
 &lt;ul&gt;
-&lt;li&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/rustup/issues/2739&quot;&gt;#2739&lt;/a&gt;: Testing for proxying, including TOOLS and DUP_TOOLS&lt;/li&gt;
-&lt;li&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/rustup/issues/2741&quot;&gt;#2741&lt;/a&gt;: Release process should include explicit beta test period&lt;/li&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;#using-a-diagnostic-derive&quot;&gt;...use a diagnostic derive&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;And as mentioned above, longer term we shall look to see what unification we can
-do between releasing Rustup and how the Rust release train runs.&lt;/p&gt;
-</content>
-
-        <author>
-            <name>Daniel Silverstone</name>
-        </author>
-    </entry>
-    
-    <entry>
-        <title>Congrats to compiler team member Aaron Hill</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/04/26/aaron-hill-compiler-team.html" type="text/html" title="Congrats to compiler team member Aaron Hill" />
-        <published>2021-04-26T00:00:00+00:00</published>
-        <updated>2021-04-26T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/04/26/aaron-hill-compiler-team.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/04/26/aaron-hill-compiler-team.html">&lt;p&gt;I am pleased to announce that &lt;a href&#x3D;&quot;https://github.com/aaron1011&quot;&gt;Aaron Hill&lt;/a&gt; has been made a full member of the &lt;a href&#x3D;&quot;https://www.rust-lang.org/governance/teams/compiler&quot;&gt;compiler team&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Aaron Hill (&lt;a href&#x3D;&quot;https://github.com/aaron1011&quot;&gt;@Aaron1011&lt;/a&gt;) has been contributing to many different parts of the compiler since his start in 2017.
-Recently, Aaron has been working on finding and fixing bugs and correctness issues in the incremental system, cleanups and improvements to macro expansion and hygiene, as well as miscellaneous bug fixes.
-Beyond the compiler, Aaron has also implemented support for &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/60026&quot;&gt;unwinding in Miri&lt;/a&gt;, &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/47833&quot;&gt;generating documentation for auto-traits&lt;/a&gt;, and &lt;a href&#x3D;&quot;https://github.com/rust-lang/cargo/pull/8825&quot;&gt;future incompatibility reporting in Cargo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Congratulations Aaron and thanks for all of your contributions to the project!&lt;/p&gt;
-</content>
-
-        <author>
-            <name>Wesley Wiser</name>
-        </author>
-    </entry>
-    
-    <entry>
-        <title>Jacob Hoffman-Andrews joins the Rustdoc team</title>
-        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2021/04/20/jsha-rustdoc-member.html" type="text/html" title="Jacob Hoffman-Andrews joins the Rustdoc team" />
-        <published>2021-04-20T00:00:00+00:00</published>
-        <updated>2021-04-20T00:00:00+00:00</updated>
-        <id>https://blog.rust-lang.org/inside-rust/2021/04/20/jsha-rustdoc-member.html</id>
-        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2021/04/20/jsha-rustdoc-member.html">&lt;p&gt;Hello everyone, please welcome &lt;a href&#x3D;&quot;https://github.com/jsha&quot;&gt;Jacob Hoffman-Andrews&lt;/a&gt; to the rustdoc team!&lt;/p&gt;
-&lt;p&gt;Jacob Hoffman-Andrews (&lt;a href&#x3D;&quot;https://github.com/jsha&quot;&gt;@jsha&lt;/a&gt;) has been contributing a lot on rustdoc front-end. Thanks to him, the pageload of the rustdoc pages is much faster. Here is a non-exhaustive list of the stuff he&#x27;s done recently:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Otherwise...
 &lt;ul&gt;
-&lt;li&gt;The huge search index is now only loaded &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/82310&quot;&gt;when needed&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The pageload has &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/82315&quot;&gt;has been optimized a bunch&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Rustdoc&#x27;s show/hide toggles &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues/83332&quot;&gt;are being converted to pure HTML&lt;/a&gt;, reducing complexity and improving pageload performance.&lt;/li&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;#manually-implementing-sessiondiagnostic&quot;&gt;...manually implement &lt;code&gt;SessionDiagnostic&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;And this is just an overview!&lt;/p&gt;
-&lt;p&gt;We are really happy to have Jacob joining us, so thanks a lot for your work and congratulations!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In both cases, diagnostics are represented as types. Representing diagnostics
+using types is a goal of the diagnostic working group as it helps separate
+diagnostic logic from the main code paths.&lt;/p&gt;
+&lt;p&gt;Every diagnostic type should implement &lt;code&gt;SessionDiagnostic&lt;/code&gt; (either manually or
+automatically). In the &lt;code&gt;SessionDiagnostic&lt;/code&gt; trait, there&#x27;s a member function
+which converts the trait into a &lt;code&gt;Diagnostic&lt;/code&gt; to be emitted.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#using-a-diagnostic-derive&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;using-a-diagnostic-derive&quot;&gt;&lt;/a&gt;Using a diagnostic derive...&lt;/h4&gt;
+&lt;p&gt;Diagnostic derives (either &lt;code&gt;SessionDiagnostic&lt;/code&gt; for whole diagnostics,
+&lt;code&gt;SessionSubdiagnostic&lt;/code&gt; for parts of diagnostics, or &lt;code&gt;DecorateLint&lt;/code&gt; for lints)
+can be used to automatically implement a diagnostic trait.&lt;/p&gt;
+&lt;p&gt;To start, create a new type in the &lt;code&gt;errors&lt;/code&gt; module of the current crate (e.g.
+&lt;code&gt;rustc_typeck::errors&lt;/code&gt; or &lt;code&gt;rustc_borrowck::errors&lt;/code&gt;) named after your
+diagnostic. In our example, that might look like:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;struct ReturnTypeArrow {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, we&#x27;ll need to add fields with all the information we need - that&#x27;s just a
+&lt;code&gt;Span&lt;/code&gt; for us:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;struct ReturnTypeArrow {
+    span: Span,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In most cases, this will just be the &lt;code&gt;Span&lt;/code&gt;s that are used by the original
+diagnostic emission logic and values that are interpolated into diagnostic
+messages.&lt;/p&gt;
+&lt;p&gt;After that, we should add the derive, add our error attribute and annotate the
+primary &lt;code&gt;Span&lt;/code&gt; (that was given to &lt;code&gt;struct_span_err&lt;/code&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;#[derive(SessionDiagnostic)]
+#[error(parser_return_type_arrow)]
+struct ReturnTypeArrow {
+    #[primary_span]
+    span: Span,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each diagnostic should have a unique slug. By convention, these always start
+with the crate that the error is related to (&lt;code&gt;parser&lt;/code&gt; in this example). This
+slug will be used to find the actual diagnostic message in our translation
+resources, which we&#x27;ll see shortly.&lt;/p&gt;
+&lt;p&gt;Finally, we need to add any labels, notes, helps or suggestions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;#[derive(SessionDiagnostic)]
+#[error(parser_return_type_arrow)]
+struct ReturnTypeArrow {
+    #[primary_span]
+    #[suggestion(applicability &#x3D; &amp;quot;machine-applicable&amp;quot;, code &#x3D; &amp;quot;-&amp;gt;&amp;quot;)]
+    span: Span,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this example, there&#x27;s just a single suggestion - to replace the &lt;code&gt;:&lt;/code&gt; with
+a &lt;code&gt;-&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Before we&#x27;re finished, we have to &lt;a href&#x3D;&quot;#adding-translation-resources&quot;&gt;add the diagnostic messages to the
+translation resources..&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For more documentation on diagnostic derives, see the &lt;a href&#x3D;&quot;https://rustc-dev-guide.rust-lang.org/diagnostics/diagnostic-structs.html&quot;&gt;diagnostic structs
+chapter of the &lt;code&gt;rustc&lt;/code&gt; dev guide&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#manually-implementing-sessiondiagnostic&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;manually-implementing-sessiondiagnostic&quot;&gt;&lt;/a&gt;Manually implementing &lt;code&gt;SessionDiagnostic&lt;/code&gt;...&lt;/h4&gt;
+&lt;p&gt;Some diagnostics are too complicated to be generated from a diagnostic type
+using the diagnostic derive. In these cases, &lt;code&gt;SessionDiagnostic&lt;/code&gt; can be
+implemented manually.&lt;/p&gt;
+&lt;p&gt;Using the same type as in &lt;a href&#x3D;&quot;#using-a-diagnostic-derive&quot;&gt;&amp;quot;Using a diagnostic
+derive...&amp;quot;&lt;/a&gt;, we can implement &lt;code&gt;SessionDiagnostic&lt;/code&gt;
+as below:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-rust&quot;&gt;use rustc_errors::{fluent, SessionDiagnostic};
+
+struct ReturnTypeArrow { span: Span }
+
+impl SessionDiagnostic for ReturnTypeArrow {
+    fn into_diagnostic(self, sess: &amp;amp;&#x27;_ rustc_session::Session) -&amp;gt; DiagnosticBuilder&amp;lt;&#x27;_&amp;gt; {
+        sess.struct_span_err(
+            self.span,
+            fluent::parser_return_type_arrow,
+        )
+        .span_suggestion_short(
+            self.span,
+            fluent::suggestion,
+            &amp;quot;-&amp;gt;&amp;quot;.to_string(),
+            Applicability::MachineApplicable,
+        )
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Instead of using strings for the messages as in the original diagnostic
+emission logic, typed identifiers referring to translation resources are used.
+Now we just have to &lt;a href&#x3D;&quot;#adding-translation-resources&quot;&gt;add the diagnostic messages to the translation
+resources..&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#examples&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;examples&quot;&gt;&lt;/a&gt;Examples&lt;/h4&gt;
+&lt;p&gt;For more examples of diagnostics ported to use the diagnostic derive or written
+manually, see the following pull requests:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/98353&quot;&gt;#98353&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/98415&quot;&gt;#98415&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/97093&quot;&gt;#97093&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/pull/99213&quot;&gt;#99213&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more examples, see the pull requests labelled &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues?q&#x3D;is%3Aopen+label%3AA-translation+sort%3Aupdated-desc&quot;&gt;&lt;code&gt;A-translation&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;&lt;a href&#x3D;&quot;#adding-translation-resources&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;adding-translation-resources&quot;&gt;&lt;/a&gt;Adding translation resources...&lt;/h4&gt;
+&lt;p&gt;Every slug in a diagnostic derive or typed identifier in a manual
+implementation needs to correspond to a message in a translation resource.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rustc&lt;/code&gt;&#x27;s translations use &lt;a href&#x3D;&quot;http://projectfluent.org/&quot;&gt;Fluent&lt;/a&gt;, an asymmetric translation system.
+For each crate in the compiler which emits diagnostics, there is a
+corresponding Fluent resource at
+&lt;code&gt;compiler/rustc_error_messages/locales/en-US/$crate.ftl&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Error messages need to be added to this resource (a macro will then generate
+the typed identifier corresponding to the message).&lt;/p&gt;
+&lt;p&gt;For our example, we should add the following Fluent to
+&lt;code&gt;compiler/rustc_error_messages/locales/en-US/parser.ftl&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-fluent&quot;&gt;parser_return_type_arrow &#x3D; return types are denoted using &#x60;-&amp;gt;&#x60;
+    .suggestion &#x3D; use &#x60;-&amp;gt;&#x60; instead
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;parser_return_type_arrow&lt;/code&gt; will generate a &lt;code&gt;parser::return_type_arrow&lt;/code&gt; type (in
+&lt;code&gt;rustc_errors::fluent&lt;/code&gt;) that can be used with diagnostic structs and the
+diagnostic builder.&lt;/p&gt;
+&lt;p&gt;Subdiagnostics are &amp;quot;attributes&amp;quot; of the primary Fluent message - by convention,
+the name of attributes are the type of subdiagnostic, such as &amp;quot;suggestion&amp;quot;, but
+this can be changed when there are multiple of one kind of subdiagnostic.&lt;/p&gt;
+&lt;p&gt;Now that the Fluent resource contains the message, our diagnostic is ported!
+More complex messages with interpolation will be able to reference other fields
+in a diagnostic type (when implemented manually, those are provided as
+arguments). See the diagnostic translation documentation &lt;a href&#x3D;&quot;https://rustc-dev-guide.rust-lang.org/diagnostics/translation.html&quot;&gt;in the &lt;code&gt;rustc&lt;/code&gt; dev
+guide&lt;/a&gt; for more examples.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#3-porting-diagnostics&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;3-porting-diagnostics&quot;&gt;&lt;/a&gt;3. Porting diagnostics&lt;/h3&gt;
+&lt;p&gt;Now that you&#x27;ve got a rough idea what to do, you need to find some diagnostics
+to port. There&#x27;s lots of diagnostics to port, so the diagnostic working group
+have split the work up to avoid anyone working on the same diagnostic as
+someone else - but right now, there aren&#x27;t many people involved, so just pick a
+crate and start porting it :)&lt;/p&gt;
+&lt;p&gt;Please add the &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues?q&#x3D;is%3Aopen+label%3AA-translation+sort%3Aupdated-desc&quot;&gt;&lt;code&gt;A-translation&lt;/code&gt;&lt;/a&gt; label to any pull requests that
+you make so we can keep track of who has made a contribution! You can use
+&lt;code&gt;rustbot&lt;/code&gt; to label your PR (if it wasn&#x27;t labelled automatically by
+&lt;code&gt;triagebot&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-text&quot;&gt;@rustbot label +A-translation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can also assign a member of the diagnostics working group to review your PR
+by posting a comment with the following content (or including this in the PR
+description):&lt;/p&gt;
+&lt;pre&gt;&lt;code class&#x3D;&quot;language-text&quot;&gt;r? rust-lang/diagnostics
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Even if you aren&#x27;t sure exactly how to proceed, give it a go and you can ask
+for help in &lt;a href&#x3D;&quot;https://rust-lang.zulipchat.com/#narrow/stream/147480-t-compiler.2Fwg-diagnostics&quot;&gt;&lt;code&gt;#t-compiler/wg-diagnostics&lt;/code&gt;&lt;/a&gt; or reach out to &lt;a href&#x3D;&quot;https://github.com/davidtwco&quot;&gt;&lt;code&gt;@davidtwco&lt;/code&gt;&lt;/a&gt;.
+Check out &lt;a href&#x3D;&quot;https://github.com/rust-lang/rust/issues/100717&quot;&gt;#100717&lt;/a&gt; for guidance on where to get started!&lt;/p&gt;
+&lt;h2&gt;&lt;a href&#x3D;&quot;#faq&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;faq&quot;&gt;&lt;/a&gt;FAQ&lt;/h2&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#is-this-a-feature-that-anyone-wants&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;is-this-a-feature-that-anyone-wants&quot;&gt;&lt;/a&gt;Is this a feature that anyone wants?&lt;/h3&gt;
+&lt;p&gt;Yes! Some language communities prefer native resources and some don&#x27;t (and
+preferences will vary within those communities too). For example,
+Chinese-speaking communities have a mature ecosystem of programming language
+resources which don&#x27;t require knowing any English.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#wouldnt-translating-x-be-more-worthwhile&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;wouldnt-translating-x-be-more-worthwhile&quot;&gt;&lt;/a&gt;Wouldn&#x27;t translating X be more worthwhile?&lt;/h3&gt;
+&lt;p&gt;There are many different areas within the Rust project where
+internationalization would be beneficial. Diagnostics aren&#x27;t being prioritized
+over any other part of the project, it&#x27;s just that there is interest within the
+compiler team in supporting this feature.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#couldnt-compiler-developer-time-be-better-spent-elsewhere&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;couldnt-compiler-developer-time-be-better-spent-elsewhere&quot;&gt;&lt;/a&gt;Couldn&#x27;t compiler developer time be better spent elsewhere?&lt;/h3&gt;
+&lt;p&gt;Compiler implementation isn&#x27;t zero-sum: work on other parts of the compiler
+aren&#x27;t impacted by these efforts and working on diagnostic translation doesn&#x27;t
+prevent contributors working on anything else.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#will-translations-be-opt-in&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;will-translations-be-opt-in&quot;&gt;&lt;/a&gt;Will translations be opt-in?&lt;/h3&gt;
+&lt;p&gt;Translations will be opt-in, you won&#x27;t need to use them if you don&#x27;t want to.&lt;/p&gt;
+&lt;h3&gt;&lt;a href&#x3D;&quot;#how-will-a-user-select-the-language&quot; aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;anchor&quot; id&#x3D;&quot;how-will-a-user-select-the-language&quot;&gt;&lt;/a&gt;How will a user select the language?&lt;/h3&gt;
+&lt;p&gt;Exactly how a user will choose to use translated error messages hasn&#x27;t been
+decided yet.&lt;/p&gt;
 </content>
 
         <author>
-            <name>Guillaume Gomez</name>
+            <name>David Wood</name>
+        </author>
+    </entry>
+    
+    <entry>
+        <title>Please welcome Dan to Library Contributors</title>
+        <link rel="alternate" href="https://blog.rust-lang.org/inside-rust/2022/08/10/libs-contributors.html" type="text/html" title="Please welcome Dan to Library Contributors" />
+        <published>2022-08-10T00:00:00+00:00</published>
+        <updated>2022-08-10T00:00:00+00:00</updated>
+        <id>https://blog.rust-lang.org/inside-rust/2022/08/10/libs-contributors.html</id>
+        <content type="html" xml:base="https://blog.rust-lang.org/inside-rust/2022/08/10/libs-contributors.html">&lt;p&gt;Please welcome &lt;a href&#x3D;&quot;https://github.com/sunfishcode&quot;&gt;Dan Gohman&lt;/a&gt; to the
+&lt;a href&#x3D;&quot;https://www.rust-lang.org/governance/teams/library#libs-contributors&quot;&gt;Library Contributors&lt;/a&gt; group!&lt;/p&gt;
+&lt;p&gt;You might know Dan from his work on
+&lt;a href&#x3D;&quot;https://wasmtime.dev/&quot;&gt;Wasmtime&lt;/a&gt;, WASI, the recent &lt;a href&#x3D;&quot;https://rust-lang.github.io/rfcs/3128-io-safety.html&quot;&gt;I/O Safety RFC&lt;/a&gt;,
+&lt;a href&#x3D;&quot;https://crates.io/crates/cap-std&quot;&gt;cap-std&lt;/a&gt;, &lt;a href&#x3D;&quot;https://crates.io/crates/rustix&quot;&gt;rustix&lt;/a&gt;,
+or one of his many (often WASI or I/O related) contributions to the Rust standard library.&lt;/p&gt;
+&lt;p&gt;Congratulations Dan, and thanks for everything you do!&lt;/p&gt;
+</content>
+
+        <author>
+            <name>Mara Bos</name>
         </author>
     </entry>
     
